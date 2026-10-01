@@ -4,8 +4,8 @@ The website of **Mouth on Fire: The Scoville Log**, as plain HTML files. No buil
 
 | Path | What |
 |---|---|
-| `site/` | The pages. `privacy.html` is the privacy policy and terms of use (English and Dutch, language switch on the page). The landing page follows when it is approved. |
-| `Caddyfile` | The web server settings: `/privacy` serves `site/privacy.html`, `/` sends people to `/privacy` for now, `www.piri.hot` sends people to `piri.hot`. HTTPS is done by Traefik in front of it. |
+| `site/` | The pages. `index.html` is the landing page (eight languages, language switch on the page, store buttons as "coming soon" placeholders) with `badges-draw.js`, the drawing code for Piri and the Piri medallions it needs. `privacy.html` is the privacy policy and terms of use (English and Dutch). |
+| `Caddyfile` | The web server settings: `/` serves `site/index.html`, `/privacy` serves `site/privacy.html`, `www.piri.hot` sends people to `piri.hot`. HTTPS is done by Traefik in front of it. |
 | `docker-compose.yml` | Two containers: `web` (Caddy, behind the server's Traefik reverse proxy, which holds ports 80 and 443 and fetches the certificate) and `sync`, which pulls this repository from GitHub every five minutes so a push to `main` is live within minutes. |
 
 The pages are generated from the approved mockups in the app repository (`MoF`, `scripts/build-site.ts`), then

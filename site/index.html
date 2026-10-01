@@ -1,0 +1,322 @@
+<!doctype html>
+<!-- piri.hot (MOF-69). Generated from preview/mockup-landing.html by scripts/build-site.ts in the MoF repository: edit the mockup there, then rebuild. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mouth on Fire · The Scoville Log</title>
+<meta name="description" content="Mouth on Fire keeps score of every hot pepper you eat, in Scoville. Piri, your pepper, grows with your total. Log the burn, earn Piri's, burn together.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&family=Noto+Sans+Thai:wght@400;700;800&display=swap">
+<style>
+  :root {
+    --bg: #FBF5EC; --bg2: #EFE4D6; --card: #FFFFFF; --ink: #1E1410; --ink2: #57443A; --line: #E8DCCF; --accent: #D6321F; --sun: #FFF1B8; --plum: #6B1030; --note: #FFF8EA; --note-line: #E0CFBA;
+    --display: 'Baloo 2', 'Noto Sans Thai', 'Trebuchet MS', sans-serif; --body: 'Nunito', 'Noto Sans Thai', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.5; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.1; margin: 0; }
+  /* site */
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; }
+  .logo { display: flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 800; font-size: 22px; text-decoration: none; }
+  .logo .dot { color: var(--accent); }
+  .lang { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; }
+  .lang select { font: inherit; font-weight: 700; border: 2px solid var(--ink); border-radius: 999px; background: var(--card); padding: 6px 12px; color: var(--ink); }
+  .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: center; padding: 24px 0 40px; }
+  .hero .kicker { font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 13px; color: var(--accent); }
+  .hero h1 { font-size: clamp(34px, 5vw, 56px); margin: 6px 0 4px; }
+  .hero .sub { font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--ink2); margin-bottom: 14px; }
+  .hero p { font-size: 18px; max-width: 52ch; margin: 0 0 22px; }
+  .hero .art { display: flex; justify-content: center; align-items: center; position: relative; }
+  .hero .art .sun { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: var(--sun); border: 2px solid var(--ink); z-index: 0; }
+  .hero .art svg { position: relative; z-index: 1; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .store { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: #fff; border-radius: 12px; padding: 8px 16px 8px 12px; text-decoration: none; min-width: 190px; position: relative; border: 2px solid var(--ink); }
+  .store .txt { display: flex; flex-direction: column; line-height: 1.1; }
+  .store .small { font-size: 11px; font-weight: 600; opacity: .85; }
+  .store .big { font-family: var(--display); font-weight: 800; font-size: 20px; }
+  .store .soon { position: absolute; top: -10px; right: -8px; background: var(--sun); color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 1px 8px; font-size: 11px; font-weight: 800; font-family: var(--display); }
+  .fine { font-size: 13px; color: var(--ink2); margin: 10px 0 0; }
+  .fine.ph { font-style: italic; }
+  section.band { padding: 40px 0; }
+  section.band.alt { background: var(--bg2); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  section h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 6px; }
+  section .lead { color: var(--ink2); max-width: 62ch; margin: 0 0 24px; font-size: 17px; }
+  .how { display: grid; grid-template-columns: 340px 1fr; gap: 32px; align-items: start; }
+  .steps { display: flex; flex-direction: column; gap: 16px; }
+  .step { display: flex; gap: 14px; }
+  .step .n { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 800; font-size: 20px; box-shadow: 3px 3px 0 var(--ink); }
+  .step h3 { font-size: 20px; margin-bottom: 2px; }
+  .step p { margin: 0; color: var(--ink2); }
+  /* phone */
+  .phone { background: var(--bg); border: 2px solid var(--ink); border-radius: 28px; padding: 16px 14px 18px; box-shadow: 6px 6px 0 var(--ink); display: flex; flex-direction: column; gap: 10px; width: 340px; max-width: 100%; margin: 0 auto; }
+  .phone .top { display: flex; justify-content: space-between; align-items: center; }
+  .phone .brand { font-family: var(--display); font-weight: 800; font-size: 20px; }
+  .chip { border: 2px solid var(--ink); border-radius: 999px; background: var(--card); padding: 3px 9px; font-weight: 700; font-size: 12px; white-space: nowrap; }
+  .card { background: var(--card); border: 2px solid var(--ink); border-radius: 16px; padding: 12px; }
+  .card.shadow { box-shadow: 4px 4px 0 var(--ink); border-radius: 18px; }
+  .label { font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink2); }
+  .num { font-family: var(--display); font-weight: 800; font-variant-numeric: tabular-nums; }
+  .total { font-size: 36px; line-height: 1; color: var(--accent); }
+  .head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .rank { display: inline-flex; flex: none; white-space: nowrap; align-items: center; gap: 4px; background: var(--card); border: 2px solid var(--ink); border-radius: 999px; padding: 3px 9px; font-family: var(--display); font-weight: 800; font-size: 12px; }
+  .rank .n { color: var(--accent); }
+  .phero .bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 4px; }
+  .phero .piris { display: flex; align-items: flex-end; margin-top: -60px; margin-bottom: 8px; }
+  .phero .piris .small { margin-right: -12px; }
+  .phero .piris > div { display: flex; flex-direction: column; align-items: center; position: relative; }
+  .phero .stage { position: absolute; left: 50%; transform: translateX(-50%); bottom: -14px; background: var(--sun); border: 2px solid var(--ink); border-radius: 999px; padding: 2px 8px; font-family: var(--display); font-weight: 800; font-size: 10px; white-space: nowrap; }
+  .stats { display: flex; gap: 6px; }
+  .stat { flex: 1; padding: 8px 8px 8px 10px; }
+  .stat .num { font-size: 22px; line-height: 1.1; }
+  .stat .lab { font-weight: 700; font-size: 11px; color: var(--ink2); line-height: 1.2; }
+  .stat.hot { background: var(--sun); }
+  .brow { display: flex; gap: 4px; flex-wrap: wrap; }
+  .hottest { display: flex; gap: 10px; align-items: center; border: 2px solid var(--ink); border-radius: 16px; padding: 10px; background: var(--plum); color: #FFE9EE; }
+  .hottest .thumb { width: 44px; height: 44px; border-radius: 10px; border: 2px solid var(--ink); background: linear-gradient(135deg, #c2321f, #7a1a10); flex: none; }
+  .hottest .lab { font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+  .hottest .name { font-family: var(--display); font-weight: 800; font-size: 17px; }
+  /* stages */
+  .stages { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .stage-tile { background: var(--card); border: 2px solid var(--ink); border-radius: 16px; padding: 12px 8px; text-align: center; }
+  .stage-tile .nm { font-family: var(--display); font-weight: 800; font-size: 15px; margin-top: 4px; line-height: 1.15; }
+  .stage-tile .th { font-size: 12px; color: var(--ink2); margin-top: 2px; }
+  /* piris */
+  .piris-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .piri-tile { background: var(--card); border: 2px solid var(--ink); border-radius: 18px; padding: 16px 12px; text-align: center; box-shadow: 4px 4px 0 var(--ink); }
+  .piri-tile .nm { font-family: var(--display); font-weight: 800; font-size: 17px; margin-top: 8px; line-height: 1.15; }
+  .piri-tile .ds { font-size: 13px; color: var(--ink2); margin-top: 4px; }
+  /* social cards */
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .fcard { background: var(--card); border: 2px solid var(--ink); border-radius: 18px; padding: 18px 16px; }
+  .fcard .ico { width: 44px; height: 44px; border-radius: 12px; border: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+  .fcard h3 { font-size: 20px; margin-bottom: 4px; }
+  .fcard p { margin: 0; color: var(--ink2); font-size: 15px; }
+  /* cta */
+  .cta { background: var(--plum); color: #FFE9EE; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 40px 0; }
+  .cta .in { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .cta h2 { color: #fff; }
+  .cta p { margin: 4px 0 16px; font-size: 17px; }
+  .cta .store { background: #fff; color: var(--ink); }
+  footer { padding: 28px 0 40px; font-size: 14px; color: var(--ink2); }
+  footer .in { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; }
+  footer .links { display: flex; gap: 18px; font-weight: 700; }
+  @media (max-width: 800px) {
+    .hero { grid-template-columns: 1fr; padding-top: 8px; }
+    .hero .art { order: -1; }
+    .hero .art .sun { width: 220px; height: 220px; }
+    .hero .art svg { width: 200px; height: 200px; }
+    .how { grid-template-columns: 1fr; }
+    .stages { grid-template-columns: repeat(3, 1fr); }
+    .piris-grid, .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 420px) { .stages { grid-template-columns: repeat(2, 1fr); } .piris-grid, .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="site">
+  <div class="wrap">
+    <header class="nav">
+      <a class="logo" href="#"><span id="logo-piri"></span>piri<span class="dot">.</span>hot</a>
+      <label class="lang"><span data-t="nav_lang">Language</span> <select id="lang"></select></label>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="kicker" data-t="brand_sub">The Scoville Log</div>
+        <h1>Mouth on Fire</h1>
+        <div class="sub" data-t="hero_h"></div>
+        <p data-t="hero_p"></p>
+        <div class="stores" id="stores-top"></div>
+        <p class="fine ph" data-t="placeholder_note"></p>
+      </div>
+      <div class="art"><div class="sun"></div><span id="hero-piri"></span></div>
+    </section>
+  </div>
+
+  <section class="band alt">
+    <div class="wrap">
+      <h2 data-t="how_h"></h2>
+      <div class="how" style="margin-top:20px">
+        <div class="phone" id="phone"></div>
+        <div class="steps">
+          <div class="step"><div class="n">1</div><div><h3 data-t="step1_h"></h3><p data-t="step1_p"></p></div></div>
+          <div class="step"><div class="n">2</div><div><h3 data-t="step2_h"></h3><p data-t="step2_p"></p></div></div>
+          <div class="step"><div class="n">3</div><div><h3 data-t="step3_h"></h3><p data-t="step3_p"></p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2 data-t="stages_h"></h2>
+      <p class="lead" data-t="stages_p"></p>
+      <div class="stages" id="stages"></div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <h2 data-t="piris_h"></h2>
+      <p class="lead" data-t="piris_p"></p>
+      <div class="piris-grid" id="piris"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2 data-t="social_h"></h2>
+      <div class="cards" style="margin-top:20px">
+        <div class="fcard"><div class="ico" style="background:#8CC3E8" id="ico-group"></div><h3 data-t="c1_h"></h3><p data-t="c1_p"></p></div>
+        <div class="fcard"><div class="ico" style="background:#F0953A" id="ico-photo"></div><h3 data-t="c2_h"></h3><p data-t="c2_p"></p></div>
+        <div class="fcard"><div class="ico" style="background:#F2C14E" id="ico-board"></div><h3 data-t="c3_h"></h3><p data-t="c3_p"></p></div>
+        <div class="fcard"><div class="ico" style="background:#7DAA68" id="ico-map"></div><h3 data-t="c4_h"></h3><p data-t="c4_p"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap in">
+      <span id="cta-piri"></span>
+      <div>
+        <h2 data-t="cta_h"></h2>
+        <p data-t="cta_p"></p>
+        <div class="stores" id="stores-bottom"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap in">
+      <div class="links"><a href="/privacy" data-t="f_privacy"></a><a href="mailto:privacy@piri.hot" data-t="f_contact"></a></div>
+      <div data-t="f_made"></div>
+      <div>© 2026 Mouth on Fire · piri.hot</div>
+    </div>
+  </footer>
+</div>
+
+<script src="badges-draw.js"></script>
+<script>
+// ---- the page's own words, one block per language (new text, written for this mockup) ----
+const LANGS = { en: 'English', nl: 'Nederlands', de: 'Deutsch', fr: 'Français', es: 'Español', th: 'ไทย', pt: 'Português', it: 'Italiano' };
+const T = {
+  en: { nav_lang: 'Language', brand_sub: 'The Scoville Log', hero_h: 'Eat the pepper. Log the burn. Regret it in style.', hero_p: 'Mouth on Fire keeps score of every hot pepper you eat, in Scoville. Piri, your pepper, grows with your total. Your friends see your burns. Your mouth never forgets.', ios_small: 'Download on the', and_small: 'Get it on', soon: 'Coming soon', placeholder_note: 'Store links follow when the app is listed.', how_h: 'How it works', step1_h: 'Pick your pepper', step1_p: '107 peppers, from Padrón to Pepper X, with names in 27 languages. Not sure which one you ate? The wizard asks colour, shape and size.', step2_h: 'Log the burn', step2_p: 'Whole, in a dish or by the gram. Rate the pain with five little Piri\'s and add a note only you can read.', step3_h: 'Watch your total climb', step3_p: 'Every pepper counts once, with your best burn. Your mouth\'s Scoville total grows and Piri grows with it.', stages_h: 'Piri grows with you', stages_p: 'Six stages, from your first sweet nothing to a full dragon roar. Piri ripens from green to red as your total climbs.', piris_h: 'Earn Piri\'s', piris_p: 'Fourteen medallions for milestones, bravery and bad decisions. A few of them:', social_h: 'Burn together', c1_h: 'Groups', c1_p: 'Invite friends with a code or a QR code. See their burns in the feed and fight over the score card.', c2_h: 'Proof photos', c2_p: 'Photograph the pepper before it gets you. Your group sees it, nobody else.', c3_h: 'Community board', c3_p: 'The hottest mouths on Earth, ranked by total. Join when you dare, leave when you cry.', c4_h: 'Countries burned', c4_p: 'A map of every country your peppers came from, with flags and dates.', cta_h: 'Ready to regret something?', cta_p: 'Piri is waiting. Bring milk.', f_privacy: 'Privacy policy', f_contact: 'Contact', f_made: 'Made in the Netherlands, with too many peppers.' },
+  nl: { nav_lang: 'Taal', brand_sub: 'Het Scoville-logboek', hero_h: 'Eet de peper. Log de burn. Heb er stijlvol spijt van.', hero_p: 'Mouth on Fire houdt de score bij van elke hete peper die je eet, in Scoville. Piri, jouw peper, groeit met je totaal. Je vrienden zien je burns. Je mond vergeet het nooit.', ios_small: 'Download in de', and_small: 'Ontdek het op', soon: 'Binnenkort', placeholder_note: 'De winkellinks volgen zodra de app in de winkels staat.', how_h: 'Zo werkt het', step1_h: 'Kies je peper', step1_p: '107 pepers, van Padrón tot Pepper X, met namen in 27 talen. Weet je niet welke je at? De wizard vraagt naar kleur, vorm en grootte.', step2_h: 'Log de burn', step2_p: 'Heel, in een gerecht of per gram. Beoordeel de pijn met vijf kleine Piri\'s en schrijf een notitie die alleen jij kunt lezen.', step3_h: 'Zie je totaal stijgen', step3_p: 'Elke peper telt één keer, met je beste burn. Het Scoville-totaal van je mond groeit en Piri groeit mee.', stages_h: 'Piri groeit met je mee', stages_p: 'Zes stadia, van je eerste zoete niks tot een volle drakenbrul. Piri rijpt van groen naar rood terwijl je totaal stijgt.', piris_h: 'Verdien Piri\'s', piris_p: 'Veertien medailles voor mijlpalen, moed en slechte beslissingen. Een paar ervan:', social_h: 'Samen branden', c1_h: 'Groepen', c1_p: 'Nodig vrienden uit met een code of een QR-code. Zie hun burns in de feed en vecht om de scorekaart.', c2_h: 'Bewijsfoto\'s', c2_p: 'Fotografeer de peper voordat hij jou te pakken heeft. Je groep ziet hem, niemand anders.', c3_h: 'Community-bord', c3_p: 'De heetste monden op aarde, gerangschikt op totaal. Doe mee als je durft, stap uit als je huilt.', c4_h: 'Landen verbrand', c4_p: 'Een kaart van elk land waar je pepers vandaan kwamen, met vlaggen en datums.', cta_h: 'Klaar om ergens spijt van te krijgen?', cta_p: 'Piri wacht. Neem melk mee.', f_privacy: 'Privacybeleid', f_contact: 'Contact', f_made: 'Gemaakt in Nederland, met te veel pepers.' },
+  de: { nav_lang: 'Sprache', brand_sub: 'Das Scoville-Logbuch', hero_h: 'Iss die Chili. Logge den Burn. Bereue es mit Stil.', hero_p: 'Mouth on Fire zählt jede scharfe Chili, die du isst, in Scoville. Piri, deine Chili, wächst mit deinem Gesamtwert. Deine Freunde sehen deine Burns. Dein Mund vergisst nie.', ios_small: 'Laden im', and_small: 'Jetzt bei', soon: 'Bald verfügbar', placeholder_note: 'Die Store-Links folgen, sobald die App gelistet ist.', how_h: 'So funktioniert es', step1_h: 'Wähle deine Chili', step1_p: '107 Chilis, von Padrón bis Pepper X, mit Namen in 27 Sprachen. Nicht sicher, welche du gegessen hast? Der Assistent fragt nach Farbe, Form und Größe.', step2_h: 'Logge den Burn', step2_p: 'Ganz, im Gericht oder in Gramm. Bewerte den Schmerz mit fünf kleinen Piris und schreib eine Notiz, die nur du lesen kannst.', step3_h: 'Sieh deinen Gesamtwert steigen', step3_p: 'Jede Chili zählt einmal, mit deinem besten Burn. Der Scoville-Wert deines Mundes wächst, und Piri wächst mit.', stages_h: 'Piri wächst mit dir', stages_p: 'Sechs Stufen, vom ersten süßen Nichts bis zum vollen Drachengebrüll. Piri reift von Grün zu Rot, während dein Gesamtwert steigt.', piris_h: 'Verdiene Piris', piris_p: 'Vierzehn Medaillen für Meilensteine, Mut und schlechte Entscheidungen. Ein paar davon:', social_h: 'Gemeinsam brennen', c1_h: 'Gruppen', c1_p: 'Lade Freunde mit einem Code oder QR-Code ein. Sieh ihre Burns im Feed und kämpft um die Punktekarte.', c2_h: 'Beweisfotos', c2_p: 'Fotografiere die Chili, bevor sie dich erwischt. Deine Gruppe sieht es, sonst niemand.', c3_h: 'Community-Tafel', c3_p: 'Die heißesten Münder der Welt, nach Gesamtwert sortiert. Mach mit, wenn du dich traust, steig aus, wenn du weinst.', c4_h: 'Verbrannte Länder', c4_p: 'Eine Karte aller Länder, aus denen deine Chilis kamen, mit Flaggen und Daten.', cta_h: 'Bereit, etwas zu bereuen?', cta_p: 'Piri wartet. Bring Milch mit.', f_privacy: 'Datenschutz', f_contact: 'Kontakt', f_made: 'Gemacht in den Niederlanden, mit zu vielen Chilis.' },
+  fr: { nav_lang: 'Langue', brand_sub: 'Le journal Scoville', hero_h: 'Mange le piment. Note le burn. Regrette avec style.', hero_p: 'Mouth on Fire compte chaque piment fort que tu manges, en Scoville. Piri, ton piment, grandit avec ton total. Tes amis voient tes burns. Ta bouche n\'oublie jamais.', ios_small: 'Télécharger dans l\'', and_small: 'Disponible sur', soon: 'Bientôt', placeholder_note: 'Les liens vers les stores arrivent quand l\'app sera publiée.', how_h: 'Comment ça marche', step1_h: 'Choisis ton piment', step1_p: '107 piments, du Padrón au Pepper X, avec des noms en 27 langues. Pas sûr de ce que tu as mangé ? L\'assistant demande la couleur, la forme et la taille.', step2_h: 'Note le burn', step2_p: 'Entier, dans un plat ou au gramme. Évalue la douleur avec cinq petits Piri et ajoute une note que toi seul peux lire.', step3_h: 'Regarde ton total grimper', step3_p: 'Chaque piment compte une fois, avec ton meilleur burn. Le total Scoville de ta bouche grandit, et Piri avec lui.', stages_h: 'Piri grandit avec toi', stages_p: 'Six étapes, du premier petit rien au rugissement du dragon. Piri mûrit du vert au rouge à mesure que ton total grimpe.', piris_h: 'Gagne des Piri', piris_p: 'Quatorze médailles pour les étapes, le courage et les mauvaises décisions. En voici quelques-unes :', social_h: 'Brûler ensemble', c1_h: 'Groupes', c1_p: 'Invite tes amis avec un code ou un QR code. Vois leurs burns dans le fil et bats-toi pour la feuille de score.', c2_h: 'Photos preuves', c2_p: 'Photographie le piment avant qu\'il ne t\'attrape. Ton groupe la voit, personne d\'autre.', c3_h: 'Tableau de la communauté', c3_p: 'Les bouches les plus chaudes de la planète, classées par total. Rejoins quand tu oses, pars quand tu pleures.', c4_h: 'Pays brûlés', c4_p: 'Une carte de chaque pays d\'où viennent tes piments, avec drapeaux et dates.', cta_h: 'Prêt à regretter quelque chose ?', cta_p: 'Piri t\'attend. Apporte du lait.', f_privacy: 'Confidentialité', f_contact: 'Contact', f_made: 'Fait aux Pays-Bas, avec beaucoup trop de piments.' },
+  es: { nav_lang: 'Idioma', brand_sub: 'El registro Scoville', hero_h: 'Come el chile. Registra el burn. Arrepiéntete con estilo.', hero_p: 'Mouth on Fire lleva la cuenta de cada chile picante que comes, en Scoville. Piri, tu chile, crece con tu total. Tus amigos ven tus burns. Tu boca nunca olvida.', ios_small: 'Descárgalo en el', and_small: 'Disponible en', soon: 'Muy pronto', placeholder_note: 'Los enlaces a las tiendas llegan cuando la app esté publicada.', how_h: 'Cómo funciona', step1_h: 'Elige tu chile', step1_p: '107 chiles, del Padrón al Pepper X, con nombres en 27 idiomas. ¿No sabes cuál comiste? El asistente pregunta color, forma y tamaño.', step2_h: 'Registra el burn', step2_p: 'Entero, en un plato o por gramos. Puntúa el dolor con cinco pequeños Piri y añade una nota que solo tú puedes leer.', step3_h: 'Mira subir tu total', step3_p: 'Cada chile cuenta una vez, con tu mejor burn. El total Scoville de tu boca crece, y Piri crece con él.', stages_h: 'Piri crece contigo', stages_p: 'Seis etapas, desde tu primera nada dulce hasta el rugido del dragón. Piri madura de verde a rojo mientras sube tu total.', piris_h: 'Gana Piris', piris_p: 'Catorce medallas por hitos, valentía y malas decisiones. Algunas de ellas:', social_h: 'Arder juntos', c1_h: 'Grupos', c1_p: 'Invita a tus amigos con un código o un código QR. Mira sus burns en el feed y pelea por la tabla de puntuaciones.', c2_h: 'Fotos de prueba', c2_p: 'Fotografía el chile antes de que te pille. Tu grupo la ve, nadie más.', c3_h: 'Tablero de la comunidad', c3_p: 'Las bocas más picantes del planeta, ordenadas por total. Únete cuando te atrevas, sal cuando llores.', c4_h: 'Países quemados', c4_p: 'Un mapa de cada país del que vinieron tus chiles, con banderas y fechas.', cta_h: '¿Listo para arrepentirte de algo?', cta_p: 'Piri te espera. Trae leche.', f_privacy: 'Privacidad', f_contact: 'Contacto', f_made: 'Hecho en los Países Bajos, con demasiados chiles.' },
+  th: { nav_lang: 'ภาษา', brand_sub: 'บันทึกสโกวิลล์', hero_h: 'กินพริก บันทึก burn แล้วเสียใจอย่างมีสไตล์', hero_p: 'Mouth on Fire นับพริกเผ็ดทุกเม็ดที่คุณกิน เป็นหน่วยสโกวิลล์ Piri พริกของคุณ เติบโตตามคะแนนรวม เพื่อนของคุณเห็น burn ของคุณ ปากของคุณไม่มีวันลืม', ios_small: 'ดาวน์โหลดบน', and_small: 'ดาวน์โหลดจาก', soon: 'เร็วๆ นี้', placeholder_note: 'ลิงก์สโตร์จะตามมาเมื่อแอปเผยแพร่แล้ว', how_h: 'วิธีใช้งาน', step1_h: 'เลือกพริกของคุณ', step1_p: 'พริก 107 ชนิด ตั้งแต่ Padrón ถึง Pepper X พร้อมชื่อใน 27 ภาษา ไม่แน่ใจว่ากินพริกอะไร? ตัวช่วยจะถามสี รูปทรง และขนาด', step2_h: 'บันทึก burn', step2_p: 'ทั้งเม็ด ในจาน หรือเป็นกรัม ให้คะแนนความเจ็บด้วย Piri ตัวเล็กห้าตัว และเขียนโน้ตที่มีแต่คุณอ่านได้', step3_h: 'ดูคะแนนรวมพุ่งขึ้น', step3_p: 'พริกแต่ละชนิดนับครั้งเดียว ด้วย burn ที่ดีที่สุดของคุณ คะแนนสโกวิลล์ของปากคุณเพิ่มขึ้น และ Piri ก็โตตาม', stages_h: 'Piri โตไปกับคุณ', stages_p: 'หกขั้น ตั้งแต่ขั้นแรกจนถึงเสียงคำรามของมังกร Piri สุกจากเขียวเป็นแดงเมื่อคะแนนรวมของคุณสูงขึ้น', piris_h: 'สะสม Piri', piris_p: 'เหรียญสิบสี่แบบสำหรับความสำเร็จ ความกล้า และการตัดสินใจที่แย่ ตัวอย่างบางส่วน:', social_h: 'เผ็ดไปด้วยกัน', c1_h: 'กลุ่ม', c1_p: 'ชวนเพื่อนด้วยรหัสหรือ QR โค้ด ดู burn ของพวกเขาในฟีด และแย่งอันดับบนบัตรคะแนน', c2_h: 'รูปหลักฐาน', c2_p: 'ถ่ายรูปพริกก่อนที่มันจะเล่นงานคุณ กลุ่มของคุณเห็น คนอื่นไม่เห็น', c3_h: 'กระดานชุมชน', c3_p: 'ปากที่ร้อนที่สุดในโลก จัดอันดับตามคะแนนรวม เข้าร่วมเมื่อกล้า ออกเมื่อร้องไห้', c4_h: 'ประเทศที่ถูกเผา', c4_p: 'แผนที่ของทุกประเทศที่พริกของคุณมาจาก พร้อมธงและวันที่', cta_h: 'พร้อมจะเสียใจกับอะไรสักอย่างหรือยัง?', cta_p: 'Piri รออยู่ เอานมมาด้วย', f_privacy: 'นโยบายความเป็นส่วนตัว', f_contact: 'ติดต่อ', f_made: 'ทำในเนเธอร์แลนด์ ด้วยพริกที่มากเกินไป' },
+  pt: { nav_lang: 'Idioma', brand_sub: 'O registo Scoville', hero_h: 'Come a malagueta. Regista o burn. Arrepende-te com estilo.', hero_p: 'O Mouth on Fire conta cada malagueta picante que comes, em Scoville. O Piri, a tua malagueta, cresce com o teu total. Os teus amigos veem os teus burns. A tua boca nunca esquece.', ios_small: 'Descarregar na', and_small: 'Disponível no', soon: 'Em breve', placeholder_note: 'As ligações às lojas chegam quando a app estiver publicada.', how_h: 'Como funciona', step1_h: 'Escolhe a tua malagueta', step1_p: '107 malaguetas, do Padrón ao Pepper X, com nomes em 27 línguas. Não sabes qual comeste? O assistente pergunta a cor, a forma e o tamanho.', step2_h: 'Regista o burn', step2_p: 'Inteira, num prato ou ao grama. Avalia a dor com cinco pequenos Piris e junta uma nota que só tu podes ler.', step3_h: 'Vê o teu total subir', step3_p: 'Cada malagueta conta uma vez, com o teu melhor burn. O total Scoville da tua boca cresce, e o Piri cresce com ele.', stages_h: 'O Piri cresce contigo', stages_p: 'Seis fases, do primeiro nadinha doce ao rugido do dragão. O Piri amadurece de verde a vermelho à medida que o teu total sobe.', piris_h: 'Ganha Piris', piris_p: 'Catorze medalhas por marcos, coragem e más decisões. Algumas delas:', social_h: 'Arder juntos', c1_h: 'Grupos', c1_p: 'Convida amigos com um código ou um código QR. Vê os burns deles no feed e luta pela tabela de classificação.', c2_h: 'Fotos de prova', c2_p: 'Fotografa a malagueta antes que ela te apanhe. O teu grupo vê, mais ninguém.', c3_h: 'Quadro da comunidade', c3_p: 'As bocas mais quentes do planeta, ordenadas por total. Entra quando te atreveres, sai quando chorares.', c4_h: 'Países queimados', c4_p: 'Um mapa de todos os países de onde vieram as tuas malaguetas, com bandeiras e datas.', cta_h: 'Pronto para te arrependeres de algo?', cta_p: 'O Piri está à espera. Traz leite.', f_privacy: 'Privacidade', f_contact: 'Contacto', f_made: 'Feito nos Países Baixos, com malaguetas a mais.' },
+  it: { nav_lang: 'Lingua', brand_sub: 'Il registro Scoville', hero_h: 'Mangia il peperoncino. Registra il burn. Pentiti con stile.', hero_p: 'Mouth on Fire tiene il conto di ogni peperoncino piccante che mangi, in Scoville. Piri, il tuo peperoncino, cresce con il tuo totale. I tuoi amici vedono i tuoi burn. La tua bocca non dimentica mai.', ios_small: 'Scarica su', and_small: 'Disponibile su', soon: 'Presto', placeholder_note: 'I link agli store arrivano quando l\'app sarà pubblicata.', how_h: 'Come funziona', step1_h: 'Scegli il tuo peperoncino', step1_p: '107 peperoncini, dal Padrón al Pepper X, con nomi in 27 lingue. Non sai quale hai mangiato? La procedura guidata chiede colore, forma e dimensione.', step2_h: 'Registra il burn', step2_p: 'Intero, in un piatto o al grammo. Valuta il dolore con cinque piccoli Piri e aggiungi una nota che solo tu puoi leggere.', step3_h: 'Guarda salire il tuo totale', step3_p: 'Ogni peperoncino conta una volta, con il tuo burn migliore. Il totale Scoville della tua bocca cresce, e Piri cresce con lui.', stages_h: 'Piri cresce con te', stages_p: 'Sei fasi, dal primo dolce nulla al ruggito del drago. Piri matura dal verde al rosso mentre il tuo totale sale.', piris_h: 'Guadagna Piri', piris_p: 'Quattordici medaglie per traguardi, coraggio e cattive decisioni. Eccone alcune:', social_h: 'Bruciare insieme', c1_h: 'Gruppi', c1_p: 'Invita gli amici con un codice o un QR code. Guarda i loro burn nel feed e litigate per la classifica del gruppo.', c2_h: 'Foto prova', c2_p: 'Fotografa il peperoncino prima che ti prenda. Il tuo gruppo la vede, nessun altro.', c3_h: 'Classifica della community', c3_p: 'Le bocche più calde del pianeta, in ordine di totale. Entra quando osi, esci quando piangi.', c4_h: 'Paesi bruciati', c4_p: 'Una mappa di ogni paese da cui vengono i tuoi peperoncini, con bandiere e date.', cta_h: 'Pronto a pentirti di qualcosa?', cta_p: 'Piri ti aspetta. Porta del latte.', f_privacy: 'Privacy', f_contact: 'Contatti', f_made: 'Fatto nei Paesi Bassi, con troppi peperoncini.' },
+};
+
+// ---- words from the database and the app dictionaries, as they are today (drafts included) ----
+const HEAT = {
+  en: ['Sweet Nothing', 'Tickle', 'Warming Up', 'Sweaty', 'Regret Loading', 'Dragon Roar'],
+  nl: ['Zoet Niks', 'Kriebel', 'Opwarmen', 'Zweterig', 'Spijt Komt Eraan', 'Drakenbrul'],
+  de: ['Sweet Nothing', 'Kitzeln', 'Aufwärmen', 'Verschwitzt', 'Fehler beim Laden', 'Drachengebrüll'],
+  fr: ['Sweet Nothing', 'Chatouille', 'Échauffement', 'En sueur', 'Problème de chargement', 'Le rugissement du dragon'],
+  es: ['Nada de nada', 'Cosquillas', 'Calentamiento', 'Sudoroso', 'Lamentamos que se esté cargand', 'El rugido del dragón'],
+  th: ['คำหวานที่ไร้ความหมาย', 'กวน', 'การอบอุ่นร่างกาย', 'เหงื่อออก', 'กำลังโหลด...', 'เสียงคำรามของมังกร'],
+  pt: ['Palavrinhas doces', 'Cócegas', 'Aquecimento', 'Suado', 'Arrependo-me de carregar', 'O Rugido do Dragão'],
+  it: ['Dolce nulla', 'Solletico', 'Riscaldamento', 'Sudato', 'Errore durante il caricamento', 'Il ruggito del drago'],
+};
+const BADGE_TEXT = {
+  en: { first_pepper: ['Baby Steps', 'Your first burn. It only gets worse from here.'], ten_peppers: ['Getting Spicy', 'Ten burns logged.'], hot_100k: ["Now We're Talking", 'A single pepper of at least 100,000 SHU.'], superhot_club: ['Superhot Club', 'A single pepper of at least 1,000,000 SHU.'], brave_raw: ['No Regrets (Many Regrets)', 'A whole pepper with pain rating 10.'], world_tour: ['Passport of Pain', 'Peppers from five different countries.'], board_leader: ['Hottest Mouth on Earth', 'All-time number one on the community board.'], tears_of_joy: ['Tears of Joy', 'Pain 10 and five stars for taste. It hurt, you loved it.'] },
+  nl: { first_pepper: ['Babystapjes', 'Je eerste burn. Vanaf hier wordt het alleen maar erger.'], ten_peppers: ['Het Wordt Pittig', 'Tien pepers gegeten in totaal.'], hot_100k: ['Nu Wordt Het Menens', 'Eén peper van minstens 100.000 SHU.'], superhot_club: ['Superhot Club', 'Eén peper van minstens 1.000.000 SHU.'], brave_raw: ['Geen Spijt (Veel Spijt)', 'Een hele peper met pijnscore 10.'], world_tour: ['Paspoort van Pijn', 'Pepers uit vijf verschillende landen.'], board_leader: ['Heetste Mond op Aarde', 'Aller tijden nummer één op het community-bord.'], tears_of_joy: ['Tranen van Geluk', 'Pijn 10 en vijf sterren voor smaak. Het deed pijn, je vond het heerlijk.'] },
+  de: { first_pepper: ['Kleine Schritte', 'Dein erster burn. Von da an wird es nur noch schlimmer.'], ten_peppers: ['Es wird heiß', 'Zehn burns wurden verzeichnet.'], hot_100k: ['Jetzt sind wir auf dem richtigen Weg', 'Eine einzige Chilischote mit mindestens 100.000 SHU.'], superhot_club: ['Superhot Club', 'Eine einzige Chilischote mit mindestens 1.000.000 SHU.'], brave_raw: ['Keine Reue (Viel Reue)', 'Eine ganze Chilischote mit einer Schärfegrad-Bewertung von 10.'], world_tour: ['Pass des Schmerzes', 'Paprika aus fünf verschiedenen Ländern.'], board_leader: ['Der heißeste Mund der Welt', 'Die absolute Nummer eins im Community-Forum.'], tears_of_joy: ['Tränen der Freude', 'Schmerzgrad 10 und fünf Sterne für den Geschmack. Es hat wehgetan, aber du hast es geliebt.'] },
+  fr: { first_pepper: ['Petit à petit', 'Ton premier « burn ». Et ça ne va faire qu’empirer à partir de là.'], ten_peppers: ['Ça va chauffer', 'Dix «burnss » enregistrés.'], hot_100k: ['Voilà qui est mieux !', "Un seul piment d'au moins 100 000 «SHU »."], superhot_club: ['Superhot Club', "Un seul piment d'au moins 1 000 000 d'SHUs."], brave_raw: ['Pas de regrets (beaucoup de regrets)', 'Un piment entier avec un niveau de piquant de 10.'], world_tour: ['Passeport de la douleur', 'Des poivrons provenant de cinq pays différents.'], board_leader: ['La bouche la plus sexy de la planète', 'Numéro un de tous les temps sur le forum de la communauté.'], tears_of_joy: ['Des larmes de joie', '10 sur 10 pour la douleur et 5 étoiles pour le goût. Ça faisait mal, mais tu as adoré.'] },
+  es: { first_pepper: ['Pasitos de bebé', 'Tu primer «burn». A partir de aquí, la cosa solo va a ir a peor.'], ten_peppers: ['A por el picante', 'He registrado diez «burns».'], hot_100k: ['¡Ahora sí que estamos hablando!', 'Un solo chile de al menos 100 000 «SHU».'], superhot_club: ['Club Superhot', 'Un solo chile de al menos 1 000 000 de «SHU».'], brave_raw: ['Sin remordimientos (muchos remordimiento', 'Un chile entero con un nivel de picante de 10.'], world_tour: ['El pasaporte del dolor', 'Pimientos de cinco países distintos.'], board_leader: ['La boca más sexy del mundo', 'El número uno de todos los tiempos en el foro de la comunidad.'], tears_of_joy: ['Lágrimas de alegría', 'Un 10 en dolor y cinco estrellas por el sabor. Te dolió, pero te encantó.'] },
+  th: { first_pepper: ['ก้าวเล็กๆ', 'burn ครั้งแรกของคุณ จากนี้ไปจะยิ่งแย่ลงเรื่อยๆ'], ten_peppers: ['เพิ่มความเผ็ดร้อน', 'บันทึกการเข้าชมเว็บไซต์burns จำนวน 10 ครั้ง'], hot_100k: ['นี่สิ ถึงเรื่องแล้ว', 'พริกหนึ่งเม็ดที่มีค่าSHU อย่างน้อย 100,000'], superhot_club: ['Superhot Club', 'พริกหนึ่งเม็ดที่มีค่าSHU อย่างน้อย 1,000,000'], brave_raw: ['ไม่มีความเสียดาย (เสียดายมาก)', 'พริกทั้งเม็ดที่มีระดับความเผ็ด 10'], world_tour: ['หนังสือเดินทางแห่งความเจ็บปวด', 'พริกจากห้าประเทศต่างกัน'], board_leader: ['ปากที่ร้อนที่สุดบนโลก', 'อันดับหนึ่งตลอดกาลบนกระดานชุมชน'], tears_of_joy: ['น้ำตาแห่งความสุข', 'คะแนนความเจ็บ 10 และ 5 ดาวสำหรับรสชาติ มันเจ็บ แต่คุณก็ชอบมัน'] },
+  pt: { first_pepper: ['Pequenos passos', 'O teu primeiro «burn». A partir daqui, só vai piorar.'], ten_peppers: ['A ficar picante', 'Registei dez «burns».'], hot_100k: ['Agora sim!', 'Uma única malagueta com pelo menos 100 000 «SHU».'], superhot_club: ['Superhot Club', 'Uma única pimenta com, pelo menos, 1 000 000 de «SHU».'], brave_raw: ['Sem arrependimentos (muitos arrependimen', 'Uma malagueta inteira com um nível de picante de 10.'], world_tour: ['Passaporte da Dor', 'Pimentos de cinco países diferentes.'], board_leader: ['A boca mais sensual do mundo', 'O número um de sempre no fórum da comunidade.'], tears_of_joy: ['Lágrimas de alegria', 'Dor 10 e cinco estrelas pelo sabor. Doeu, mas adoraste.'] },
+  it: { first_pepper: ['Piccoli passi', 'Il tuo primo burn. Da qui in poi andrà solo peggio.'], ten_peppers: ['Si fa piccante', 'Ho registrato dieci "burns".'], hot_100k: ['Ecco, ora sì che si ragiona!', 'Un solo peperoncino da almeno 100.000 "SHU".'], superhot_club: ['Superhot Club', 'Un solo peperoncino che valga almeno 1.000.000 di SHU.'], brave_raw: ['Nessun rimpianto (Tanti rimpianti)', 'Un peperoncino intero con un livello di piccantezza pari a 10.'], world_tour: ['Il passaporto del dolore', 'Peperoni provenienti da cinque paesi diversi.'], board_leader: ['La bocca più sexy del mondo', 'Il numero uno di sempre sul forum della community.'], tears_of_joy: ['Lacrime di gioia', '10 per il dolore e cinque stelle per il gusto. Faceva male, ma ti è piaciuto da morire.'] },
+};
+const APP = { // the app's own Home words (src/locales/<lang>/home.json, common.json)
+  en: { survived: 'Your mouth has survived', tried: 'peppers tried', logged: 'burns logged', countries: 'countries burned', piris: "Piri's · 6 of 14", hottest: 'Hottest so far', board: 'on the board', full: 'Full unlock' },
+  nl: { survived: 'Je mond heeft het overleefd', tried: "paprika's geproefd", logged: 'burns ingelogd', countries: 'landen die in brand stonden', piris: "Piri's · 6 van 14", hottest: 'De populairste tot nu toe', board: 'op het bord', full: 'Full ontgrendelen' },
+  de: { survived: 'Dein Mund hat es überstanden', tried: 'Chili probiert', logged: 'burns protokolliert', countries: 'Länder, in denen es gebrannt hat', piris: "Piri's · 6 von 14", hottest: 'Das Heißeste bisher', board: 'auf der Tafel', full: 'Full entsperren' },
+  fr: { survived: 'Ta bouche a tenu le coup', tried: 'on a goûté des poivrons', logged: 'burns connecté', countries: 'pays ravagés par les incendies', piris: "Piri's · 6 de 14", hottest: "Le plus chaud jusqu'à présent", board: 'au tableau', full: 'Full déverrouiller' },
+  es: { survived: 'Tu boca ha sobrevivido', tried: 'pimientos que probé', logged: 'burns conectado', countries: 'países arrasados', piris: "Piri's · 6 de 14 te informo", hottest: 'Lo más popular hasta ahora', board: 'en el tablero', full: 'Full desbloquear' },
+  th: { survived: 'ปากของคุณยังอยู่รอดมาได้', tried: 'พริกที่ลองแล้ว', logged: 'burns บันทึกแล้ว', countries: 'ประเทศที่ถูกเผา', piris: "Piri's · 6 ของ 14", hottest: 'ร้อนที่สุดจนถึงตอนนี้', board: 'บนกระดาน', full: 'Full ปลดล็อก' },
+  pt: { survived: 'A tua boca sobreviveu', tried: 'pimentos experimentados', logged: 'burns registado', countries: 'países queimados', piris: "Piri's · 6 de 14", hottest: 'O mais quente até agora', board: 'no quadro', full: 'Full desbloquear' },
+  it: { survived: 'La tua bocca ce l’ha fatta', tried: 'peperoni provati', logged: 'burns registrato', countries: 'paesi bruciati', piris: "Piri's · 6 di 14", hottest: 'Il più caldo finora', board: 'in campo', full: 'Full sblocca' },
+};
+const LOCALE = { en: 'en-GB', nl: 'nl-NL', de: 'de-DE', fr: 'fr-FR', es: 'es-ES', th: 'th-TH', pt: 'pt-PT', it: 'it-IT' };
+
+// ---- drawings ----
+const STAGES = [
+  { th: [0, 99],              spec: { mood: 'happy', scale: 0.5, baby: true, body: '#7DAA68' } },
+  { th: [100, 9999],          spec: { mood: 'happy', body: '#B9C24A' } },
+  { th: [10000, 99999],       spec: { mood: 'happy', glyph: 'sweat', body: '#E9C64A' } },
+  { th: [100000, 999999],     spec: { mood: 'cool', body: '#EDAB42' } },
+  { th: [1000000, 9999999],   spec: { mood: 'smoked', glyph: 'smoke', body: '#F0953A' } },
+  { th: [10000000, null],     spec: { mood: 'roar', scale: 0.52, glyph2: 'dragoncrown', body: '#E43D28' } },
+];
+const piri = (i, size, name) => medal({ name, fill: 'none', bare: true, ...STAGES[i].spec }, size, true);
+const SHOW = ['first_pepper', 'ten_peppers', 'hot_100k', 'superhot_club', 'brave_raw', 'world_tour', 'board_leader', 'tears_of_joy'];
+const ink = '#1E1410';
+const appleIcon = `<svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.6-1-2.6-3.8zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.2-.6 2.8-1.4z"/></svg>`;
+const playIcon = `<svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 3.5v17l9-8.5z" fill="#34A853"/><path d="M4 3.5l9 8.5 3-2.8L5.5 3z" fill="#4285F4"/><path d="M4 20.5l9-8.5 3 2.8L5.5 21z" fill="#EA4335"/><path d="M16 9.2l3.5 2c.7.4.7 1.2 0 1.6l-3.5 2-3-2.8z" fill="#FBBC04"/></svg>`;
+const stores = (t) => `
+  <a class="store" href="#" title="placeholder: https://apps.apple.com/app/id0000000000">${appleIcon}<span class="txt"><span class="small">${t.ios_small}</span><span class="big">App Store</span></span><span class="soon">${t.soon}</span></a>
+  <a class="store" href="#" title="placeholder: https://play.google.com/store/apps/details?id=app.mouthonfire.mobile">${playIcon}<span class="txt"><span class="small">${t.and_small}</span><span class="big">Google Play</span></span><span class="soon">${t.soon}</span></a>`;
+const icons = {
+  group: `<svg width="26" height="26" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4" fill="#fff" stroke="${ink}" stroke-width="2"/><circle cx="17" cy="10" r="3" fill="#fff" stroke="${ink}" stroke-width="2"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M16 15c3 0 6 1.5 6 5" fill="none" stroke="${ink}" stroke-width="2" stroke-linecap="round"/></svg>`,
+  photo: `<svg width="26" height="26" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3" fill="#fff" stroke="${ink}" stroke-width="2"/><path d="M8 7l1.5-3h5L16 7" fill="none" stroke="${ink}" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13.5" r="3.5" fill="#E43D28" stroke="${ink}" stroke-width="2"/></svg>`,
+  board: `<svg width="26" height="26" viewBox="0 0 24 24"><path d="M6 20V10h4v10zM14 20V4h4v16z" fill="#fff" stroke="${ink}" stroke-width="2" stroke-linejoin="round"/><path d="M3 20h18" stroke="${ink}" stroke-width="2" stroke-linecap="round"/></svg>`,
+  map: `<svg width="26" height="26" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#8CC3E8" stroke="${ink}" stroke-width="2"/><path d="M6 9c2-3 6-2 6 1s-4 3-3 6M14 6c3 1 4 4 2 6" fill="none" stroke="#FBF5EC" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+};
+
+function render(lang) {
+  const t = T[lang], loc = LOCALE[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = t[el.dataset.t]; });
+  document.getElementById('stores-top').innerHTML = stores(t);
+  document.getElementById('stores-bottom').innerHTML = stores(t);
+  // stages with the heat labels of this language
+  const fmt = (n) => n.toLocaleString(loc);
+  const th = ([a, b]) => b === null ? `≥ ${fmt(a)}` : a === 0 ? `< ${fmt(b + 1)}` : `${fmt(a)} – ${fmt(b)}`;
+  document.getElementById('stages').innerHTML = STAGES.map((s, i) => `<div class="stage-tile">${piri(i, 96, HEAT[lang][i])}<div class="nm">${HEAT[lang][i]}</div><div class="th">${th(s.th)}</div></div>`).join('');
+  // example Piri's with their names in this language
+  document.getElementById('piris').innerHTML = SHOW.map((code) => { const b = BADGES.find((x) => x.code === code); const [nm, ds] = BADGE_TEXT[lang][code]; return `<div class="piri-tile">${medal({ ...b, name: nm }, 104, true)}<div class="nm">${nm}</div><div class="ds">${ds}</div></div>`; }).join('');
+  // the phone: a small Home screen in the app's own words
+  const a = APP[lang], cur = 4;
+  const hero = STAGES.map((s, i) => i === cur ? `<div>${piri(i, 84, HEAT[lang][i])}<span class="stage">${HEAT[lang][i]}</span></div>` : `<div class="small" style="transform: translateY(-${Math.max(0, 22 - 6 * Math.abs(i - cur))}px)">${piri(i, 22, HEAT[lang][i])}</div>`).join('');
+  const earned = ['first_pepper', 'hot_100k', 'superhot_club', 'million_total', 'brave_raw', 'tears_of_joy'];
+  document.getElementById('phone').innerHTML = `
+    <div class="top"><span class="brand">Mouth on Fire</span><span class="chip">${a.full}</span></div>
+    <div class="card shadow phero">
+      <div class="head"><div class="label">${a.survived}</div><div class="rank"><span class="n">#23</span> ${a.board} ›</div></div>
+      <div class="num total">${fmt(5261313)}</div>
+      <div style="font-family:var(--display);font-weight:700;font-size:16px">Scoville</div>
+      <div class="bottom"><div></div><div class="piris">${hero}</div></div>
+    </div>
+    <div class="stats">
+      <div class="card stat"><div class="num">8</div><div class="lab">${a.tried}</div></div>
+      <div class="card stat"><div class="num">8</div><div class="lab">${a.logged}</div></div>
+      <div class="card stat"><div class="num">6</div><div class="lab">${a.countries}</div></div>
+    </div>
+    <div class="card" style="padding:8px 10px"><div class="label" style="margin-bottom:6px">${a.piris}</div><div class="brow">${BADGES.filter((b) => earned.includes(b.code)).map((b) => medal(b, 34, true)).join('')}</div></div>
+    <div class="hottest"><div class="thumb"></div><div><div class="lab">${a.hottest}</div><div class="name">Dragon's Breath</div><div style="font-weight:700;font-size:12px">${fmt(2480000)} SHU · ${HEAT[lang][5]}</div></div></div>`;
+  try { localStorage.setItem('piri-lang', lang); } catch {}
+}
+
+// language switch: hash (#nl), then remembered, then the browser, then English
+const sel = document.getElementById('lang');
+sel.innerHTML = Object.entries(LANGS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('');
+let start = location.hash.slice(1);
+if (!T[start]) { try { start = localStorage.getItem('piri-lang'); } catch {} }
+if (!T[start]) start = (navigator.language || 'en').slice(0, 2);
+if (!T[start]) start = 'en';
+sel.value = start;
+sel.addEventListener('change', () => { location.hash = sel.value; render(sel.value); });
+document.getElementById('logo-piri').innerHTML = piri(5, 30, 'Piri');
+document.getElementById('hero-piri').innerHTML = piri(5, 300, 'Piri');
+document.getElementById('cta-piri').innerHTML = piri(4, 150, 'Piri');
+for (const [k, v] of Object.entries(icons)) document.getElementById('ico-' + k).innerHTML = v;
+render(start);
+</script>
+</body>
+</html>
