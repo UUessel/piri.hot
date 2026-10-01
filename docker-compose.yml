@@ -1,7 +1,9 @@
-# piri.hot: the Mouth on Fire website as plain files, served by Caddy (HTTPS included).
-# Two containers: "web" serves the files in site/, "sync" keeps a copy of this repository up to date on the server
-# by pulling from GitHub every five minutes, so a push to main is live within minutes without a redeploy.
-# Start on the server with: docker compose up -d   (ports 80 and 443 must be free)
+# piri.hot: the Mouth on Fire website as plain files, served by Caddy behind the server's Traefik reverse proxy.
+# Two containers: "web" serves the files in site/ on its own port 80 (never published on the server: Traefik holds
+# ports 80 and 443 and sends piri.hot to this container, with the HTTPS certificate), "sync" keeps a copy of this
+# repository up to date by pulling from GitHub every five minutes, so a push to main is live within minutes.
+# Expects Traefik's external Docker network "web", entry point "websecure" and certificate resolver "mytlschallenge".
+# Start on the server with: docker compose up -d   (or Hostinger's Docker Manager with this repository's address)
 services:
   sync:
     image: alpine/git:latest
@@ -26,17 +28,27 @@ services:
     restart: unless-stopped
     depends_on:
       - sync
-    ports:
-      - "80:80"
-      - "443:443"
+    networks:
+      - web
     volumes:
       - repo:/repo:ro
       - caddy_data:/data
       - caddy_config:/config
     # --watch reloads the Caddyfile when a pull changes it; the pages themselves are read on every request
     command: ["caddy", "run", "--config", "/repo/Caddyfile", "--adapter", "caddyfile", "--watch"]
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.piri.rule=Host(`piri.hot`) || Host(`www.piri.hot`)"
+      - "traefik.http.routers.piri.entrypoints=websecure"
+      - "traefik.http.routers.piri.tls.certresolver=mytlschallenge"
+      - "traefik.http.services.piri.loadbalancer.server.port=80"
 
 volumes:
   repo:
   caddy_data:
   caddy_config:
+
+networks:
+  web:
+    external: true

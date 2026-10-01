@@ -1,10 +1,18 @@
-# piri.hot: Caddy serves the pages in site/ and fetches the HTTPS certificate itself once the DNS points here.
+# piri.hot: Caddy serves the pages in site/ on port 80 inside the container. Traefik in front of it holds the real
+# ports and the HTTPS certificate, so Caddy's own HTTPS is switched off here.
 # Clean addresses: /privacy serves site/privacy.html. The home address sends people to /privacy until the landing page
 # is approved (Mouth on Fire backlog item MOF-69); then replace the redirect with the index page.
 
-piri.hot {
+{
+	auto_https off
+}
+
+:80 {
 	root * /repo/site
 	encode gzip
+
+	@www host www.piri.hot
+	redir @www https://piri.hot{uri} permanent
 
 	@home path /
 	redir @home /privacy 302
@@ -16,8 +24,4 @@ piri.hot {
 		X-Content-Type-Options nosniff
 		Referrer-Policy strict-origin-when-cross-origin
 	}
-}
-
-www.piri.hot {
-	redir https://piri.hot{uri} permanent
 }
