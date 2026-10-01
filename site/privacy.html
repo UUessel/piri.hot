@@ -1,0 +1,306 @@
+<!doctype html>
+<!-- piri.hot/privacy (MOF-12). Generated from preview/mockup-privacy.html by scripts/build-site.ts in the MoF repository: edit the mockup there, then rebuild. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy · Mouth on Fire</title>
+<meta name="description" content="What the Mouth on Fire app stores about you, why, who can see it, and how to export or delete it. Plus the terms of use.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  :root {
+    --bg: #FBF5EC; --bg2: #EFE4D6; --card: #FFFFFF; --ink: #1E1410; --ink2: #57443A; --line: #E8DCCF; --accent: #D6321F; --sun: #FFF1B8; --plum: #6B1030; --note: #FFF8EA; --note-line: #E0CFBA;
+    --display: 'Baloo 2', 'Trebuchet MS', sans-serif; --body: 'Nunito', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.55; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.1; margin: 0; }
+  /* site */
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; }
+  .logo { display: flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 800; font-size: 22px; text-decoration: none; }
+  .logo .dot { color: var(--accent); }
+  .lang { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; }
+  .lang select { font: inherit; font-weight: 700; border: 2px solid var(--ink); border-radius: 999px; background: var(--card); padding: 6px 12px; color: var(--ink); }
+  .head { padding: 24px 0 8px; }
+  .head .kicker { font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 13px; color: var(--accent); }
+  .head h1 { font-size: clamp(32px, 4.6vw, 48px); margin: 6px 0 8px; }
+  .head .meta { color: var(--ink2); font-size: 15px; }
+  .layout { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 16px 0 48px; align-items: start; }
+  .toc { position: sticky; top: 16px; background: var(--card); border: 2px solid var(--ink); border-radius: 18px; padding: 14px 16px; box-shadow: 4px 4px 0 var(--ink); font-size: 14px; }
+  .toc .label { font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink2); margin-bottom: 6px; }
+  .toc ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 3px; }
+  .toc a { text-decoration: none; font-weight: 700; }
+  .toc a:hover { color: var(--accent); }
+  .toc .terms { margin-top: 10px; padding-top: 10px; border-top: 2px solid var(--line); }
+  .doc { background: var(--card); border: 2px solid var(--ink); border-radius: 20px; padding: 28px 32px; box-shadow: 6px 6px 0 var(--ink); }
+  .doc .intro { font-size: 18px; margin: 0 0 20px; max-width: 64ch; }
+  .doc h2 { font-size: 24px; margin: 28px 0 8px; scroll-margin-top: 16px; }
+  .doc h2:first-of-type { margin-top: 0; }
+  .doc h3 { font-size: 18px; margin: 16px 0 4px; }
+  .doc p { margin: 0 0 10px; max-width: 70ch; }
+  .doc ul { margin: 0 0 12px; padding-left: 22px; max-width: 70ch; }
+  .doc li { margin: 3px 0; }
+  .doc li b, .doc p b { font-weight: 800; }
+  .doc table { border-collapse: collapse; width: 100%; margin: 6px 0 14px; font-size: 15px; }
+  .doc th, .doc td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 2px solid var(--line); }
+  .doc th { font-family: var(--display); font-weight: 800; font-size: 14px; background: var(--bg2); }
+  .doc .box { background: var(--sun); border: 2px solid var(--ink); border-radius: 14px; padding: 12px 16px; margin: 12px 0 16px; max-width: 70ch; }
+  .doc .divider { border: 0; border-top: 2px solid var(--ink); margin: 36px 0 24px; }
+  .doc .terms-head { font-size: clamp(26px, 3.4vw, 34px); margin-bottom: 4px; }
+  footer { padding: 28px 0 40px; font-size: 14px; color: var(--ink2); border-top: 2px solid var(--ink); background: var(--bg2); }
+  footer .in { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; }
+  footer .links { display: flex; gap: 18px; font-weight: 700; }
+  @media (max-width: 800px) {
+    .layout { grid-template-columns: 1fr; gap: 20px; }
+    .toc { position: static; box-shadow: 3px 3px 0 var(--ink); }
+    .doc { padding: 20px 18px; box-shadow: 4px 4px 0 var(--ink); }
+    .doc table, .doc thead, .doc tbody, .doc tr, .doc th, .doc td { display: block; }
+    .doc thead { display: none; }
+    .doc td { border: 0; padding: 2px 0; }
+    .doc td:first-child { font-weight: 800; padding-top: 10px; }
+    .doc tr { border-bottom: 2px solid var(--line); padding-bottom: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="site">
+  <div class="wrap">
+    <header class="nav">
+      <a class="logo" href="/"><svg class="medal" width="30" height="30" viewBox="0 0 120 120" role="img" aria-label="Piri"><g transform="translate(28.799999999999997 36) scale(0.52)"><path d="M50 22 C46 10 56 4 62 12 C70 6 82 10 78 22 Z" fill="#5E9E4C" stroke="#1E1410" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M40 30 C20 55 24 105 44 130 C52 140 70 142 84 128 C100 112 104 62 86 34 C76 20 50 20 40 30 Z" fill="#E43D28" stroke="#1E1410" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M50 40 C42 60 44 95 56 118" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><path d="M50 70 l8 -5 l-8 -5 M90 70 l-8 -5 l8 -5" fill="none" stroke="#1E1410" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M56 86 q14 -6 28 0 q-2 22 -14 22 q-12 0 -14 -22z" fill="#1E1410"/><path d="M62 100 q8 -6 16 0 q-2 8 -8 8 q-6 0 -8 -8z" fill="#E9535E"/><path d="M58 88 l4 5 l3 -5 M78 88 l-4 5 l-3 -5" fill="#fff" stroke="none"/><path d="M100 84 q6 4 0 10 M104 80 q10 7 0 18" fill="none" stroke="#1E1410" stroke-width="2.5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(61.5 0)"><g transform="translate(-16 2) scale(-0.85 0.85)"><path d="M-2 54 C-7 46 -7 34 0 28 C4 24 10 24 14 27 L25 30 L24 34 L15 35 L17 38 L9 38 C6 42 4 48 4 54 Z" fill="#5E9E4C" stroke="#1E1410" stroke-width="2.5" stroke-linejoin="round"/><path d="M1 27 l-4 -9 l7 6z M7 26 l1 -9 l4 8z" fill="#5E9E4C" stroke="#1E1410" stroke-width="2" stroke-linejoin="round"/><path d="M-4 34 l-6 -3 l5 -3z M-6 41 l-6 -2 l4 -4z M-6 48 l-6 -1 l4 -4z" fill="#5E9E4C" stroke="#1E1410" stroke-width="2" stroke-linejoin="round"/><ellipse cx="9" cy="31" rx="2.6" ry="1.8" fill="#fff" stroke="#1E1410" stroke-width="1.2"/><path d="M9.5 29.4 v3.4" stroke="#1E1410" stroke-width="1.4"/><circle cx="22" cy="32" r="1" fill="#1E1410"/><path d="M12 37 l6 2" stroke="#1E1410" stroke-width="1.5" stroke-linecap="round"/></g><g transform="translate(16 2) scale(0.85)"><path d="M-2 54 C-7 46 -7 34 0 28 C4 24 10 24 14 27 L25 30 L24 34 L15 35 L17 38 L9 38 C6 42 4 48 4 54 Z" fill="#E43D28" stroke="#1E1410" stroke-width="2.5" stroke-linejoin="round"/><path d="M1 27 l-4 -9 l7 6z M7 26 l1 -9 l4 8z" fill="#E43D28" stroke="#1E1410" stroke-width="2" stroke-linejoin="round"/><path d="M-4 34 l-6 -3 l5 -3z M-6 41 l-6 -2 l4 -4z M-6 48 l-6 -1 l4 -4z" fill="#E43D28" stroke="#1E1410" stroke-width="2" stroke-linejoin="round"/><ellipse cx="9" cy="31" rx="2.6" ry="1.8" fill="#fff" stroke="#1E1410" stroke-width="1.2"/><path d="M9.5 29.4 v3.4" stroke="#1E1410" stroke-width="1.4"/><circle cx="22" cy="32" r="1" fill="#1E1410"/><path d="M12 37 l6 2" stroke="#1E1410" stroke-width="1.5" stroke-linecap="round"/></g><g transform="translate(-8 -8) scale(1.05)"><path d="M-2 54 C-7 46 -7 34 0 28 C4 24 10 24 14 27 L25 30 L24 34 L15 35 L17 38 L9 38 C6 42 4 48 4 54 Z" fill="#E9C64A" stroke="#1E1410" stroke-width="2.5" stroke-linejoin="round"/><path d="M1 27 l-4 -9 l7 6z M7 26 l1 -9 l4 8z" fill="#E9C64A" stroke="#1E1410" stroke-width="2" stroke-linejoin="round"/><path d="M-4 34 l-6 -3 l5 -3z M-6 41 l-6 -2 l4 -4z M-6 48 l-6 -1 l4 -4z" fill="#E9C64A" stroke="#1E1410" stroke-width="2" stroke-linejoin="round"/><ellipse cx="9" cy="31" rx="2.6" ry="1.8" fill="#fff" stroke="#1E1410" stroke-width="1.2"/><path d="M9.5 29.4 v3.4" stroke="#1E1410" stroke-width="1.4"/><circle cx="22" cy="32" r="1" fill="#1E1410"/><path d="M13 36 L28 42 L17 47 C12 47 10 42 12 38 Z" fill="#8A1E12" stroke="#1E1410" stroke-width="2" stroke-linejoin="round"/><path d="M15 36 l1.5 3 l1.5 -3 M20 37.5 l1.5 3 l1.5 -2.5 M16 46 l1.5 -3 l1.5 3" fill="#fff"/><path d="M31 33 q4 5 0 10 M35 30 q7 8 0 16" fill="none" stroke="#1E1410" stroke-width="2.2" stroke-linecap="round" opacity=".6"/></g><rect x="-22" y="50" width="44" height="9" rx="2.5" fill="#C4CAD1" stroke="#1E1410" stroke-width="3"/><path d="M-13 54.5 l3 -3 l3 3 l-3 3z M10 54.5 l3 -3 l3 3 l-3 3z" fill="#8CC3E8" stroke="#1E1410" stroke-width="1.5"/><path d="M-1.5 54.5 l3 -3 l3 3 l-3 3z" fill="#E43D28" stroke="#1E1410" stroke-width="1.5"/></g></svg>piri<span class="dot">.</span>hot</a>
+      <label class="lang"><span data-t="nav_lang">Language</span> <select id="lang"></select></label>
+    </header>
+    <div class="head">
+      <div class="kicker" data-t="kicker"></div>
+      <h1 data-t="title"></h1>
+      <div class="meta" data-t="meta"></div>
+    </div>
+    <div class="layout">
+      <nav class="toc" id="toc"></nav>
+      <article class="doc" id="doc"></article>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap in">
+      <div data-t="f_made"></div>
+      <div class="links"><a href="/" data-t="f_home"></a><a href="/privacy" data-t="f_privacy"></a><a href="mailto:privacy@piri.hot" data-t="f_contact"></a></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+const LANGS = { en: 'English', nl: 'Nederlands' };
+
+// Each language: the page words, then the policy sections, then the terms sections.
+// A section is { id, h, body }, body is a list of: a string (paragraph), { ul: [...] } (list), { table: [[...]] } (rows,
+// first row is the header), { box: '...' } (highlighted note). Keep the same ids in every language.
+const T = {
+en: {
+  nav_lang: 'Language', kicker: 'Mouth on Fire · The Scoville Log', title: 'Privacy policy',
+  meta: 'Version 1 · [date of first publication] · Applies to the Mouth on Fire app and the piri.hot website.',
+  toc_label: 'On this page', toc_terms: 'Terms of use',
+  f_made: 'Made in the Netherlands, with too many peppers.', f_home: 'Home', f_privacy: 'Privacy policy', f_contact: 'Contact',
+  intro: 'Mouth on Fire keeps score of the hot peppers you eat. To do that it stores a few things about you. This page says what, why, who can see it, and how you get rid of it. Short version: we keep what the app needs, we sell nothing, we show no ads, and you can export or delete everything yourself from the profile screen.',
+  policy: [
+    { id: 'who', h: '1. Who is responsible', body: [
+      'Piri, the Netherlands [postal address], is responsible for your data in the Mouth on Fire app and on piri.hot. Questions, requests and complaints go to <a href="mailto:privacy@piri.hot">privacy@piri.hot</a>. We answer within a month, as the law asks.',
+    ]},
+    { id: 'what', h: '2. What we store, and why', body: [
+      'We only store what the app needs to work. Nothing on this list is optional for us to collect in secret: every row below is something you type, pick or tap yourself.',
+      { table: [
+        ['What', 'Where it comes from', 'Why we keep it'],
+        ['Your e-mail address', 'You type it to sign in. There is no password: you get a sign-in link by mail.', 'To let you in, and to send you that link. Nothing else: no newsletters.'],
+        ['Nickname, short bio, profile picture, language', 'You fill them in on the profile screen.', 'So your group-mates and, if you opt in, the community board know who you are.'],
+        ['Your burns', 'Every pepper you log: which pepper, how much, how it hurt, the date, whether it was whole or in a dish.', 'That is the app. Your total, your Piri and your Piri\'s are calculated from it.'],
+        ['Private note and place', 'The note on a burn, and the place name with map coordinates when you tap the location button.', 'For your own memory. Only you can read it; the app asks the phone for permission first and you can clear it.'],
+        ['Proof photos', 'Photos you add to a burn from your camera roll.', 'To show your group the pepper. Your group sees them, nobody else; you can replace or remove them.'],
+        ['Group membership', 'The group you create or join with a code, and the burns you share in its feed.', 'So your group sees each other\'s burns and the score card.'],
+        ['Community board switch', 'A switch on the profile screen, off by default.', 'When on, your nickname, picture and total appear on the public board inside the app. Flip it off and you vanish from it.'],
+        ['People you hide', 'The "Hide from my feed" choice after a report.', 'So those people no longer see each other\'s burns, scores and photos, in both directions.'],
+        ['Reports', 'When you report a person, photo or group: the reason, your note and an optional screenshot.', 'To review the content within 24 hours and act on it. The reported person is not told who reported.'],
+        ['Crash reports', 'Only when the app breaks and you tap "Tell Piri\'s makers": the error text, the screen, the app version, the phone type and language, and your account if you were signed in.', 'To fix the bug. Nothing is sent without that tap.'],
+      ]},
+      'We do not use advertising, analytics or tracking tools in the app or on the site. We do not read your contacts, your other photos or your location in the background.',
+    ]},
+    { id: 'who-sees', h: '3. Who can see what', body: [
+      { ul: [
+        '<b>You</b> see everything of yours: burns, notes, places, photos, Piri\'s, hidden people, and the export.',
+        '<b>Your group-mates</b> see your nickname, picture, burns (pepper, amount, pain, date), proof photos and your score. Not your notes or places.',
+        '<b>The community board</b> shows your nickname, picture and total to everyone who uses the app, only while your board switch is on.',
+        '<b>Strangers</b> see nothing. People you hide, and people who hide you, see nothing of each other.',
+        '<b>We</b> (the makers) can see your data in an admin console, and use that access only for moderation, support and fixing bugs.',
+      ]},
+    ]},
+    { id: 'services', h: '4. Services we use', body: [
+      'Your data is stored with <b>Supabase</b> in a data centre in Ireland, inside the European Union. The sign-in mail is sent by <b>Resend</b>. The pepper catalog and its pictures come from public sources (Wikidata, Wikimedia Commons) and contain no data about you.',
+      'These companies process data on our behalf under their own data processing agreements. We do not sell, rent or share your data with anyone else.',
+    ]},
+    { id: 'basis', h: '5. The legal grounds', body: [
+      'The privacy law in the European Union (the GDPR) asks us to name a reason for each thing we keep. Account, profile, burns and groups: needed to provide the app you asked for (performance of a contract). Place and photos: your consent, given when you tap the button and allow the phone to share them. Reports, hidden people and crash reports: our legitimate interest in keeping the app safe and working. Nothing is kept for any other purpose.',
+    ]},
+    { id: 'retention', h: '6. How long we keep it', body: [
+      'As long as you have an account. Delete your account on the profile screen and your profile, burns, notes, photos, profile picture and report screenshots are removed at once; your reports and crash reports lose the link to you. Backup copies at our hosting provider are overwritten within a few weeks.',
+      'An account that has not been opened for three years may be deleted by us, after a warning mail.',
+    ]},
+    { id: 'rights', h: '7. Your rights', body: [
+      'You can do most of this yourself in the app:',
+      { ul: [
+        '<b>See and take your data:</b> profile screen, "Export data". You get one file with everything.',
+        '<b>Correct it:</b> edit your profile and your burns any time.',
+        '<b>Delete it:</b> profile screen, "Delete account". Gone at once, no questions asked.',
+        '<b>Stop sharing:</b> flip the board switch off, leave your group, remove a photo.',
+      ]},
+      'For anything else, such as objecting to how we use your data or asking what we hold, mail <a href="mailto:privacy@piri.hot">privacy@piri.hot</a>. If you are not happy with our answer you can complain to the Dutch data protection authority, the Autoriteit Persoonsgegevens (autoriteitpersoonsgegevens.nl).',
+    ]},
+    { id: 'security', h: '8. Security', body: [
+      'All traffic between the app and our servers is encrypted. The database checks on every request that you only see your own data and your group\'s. Sign-in is by a one-time link, so there is no password to steal. Photos sit in private storage and are served through short-lived links.',
+    ]},
+    { id: 'children', h: '9. Children', body: [
+      'Mouth on Fire is not meant for people under 16. We do not knowingly keep data about them; if you think we do, mail us and we remove it.',
+    ]},
+    { id: 'changes', h: '10. Changes to this page', body: [
+      'When something changes in what we store or why, this page changes with it and the version and date at the top move. A big change is also announced in the app.',
+    ]},
+  ],
+  terms: [
+    { id: 'terms', h: 'Terms of use', body: [
+      'Short and plain, because there is not much to it.',
+      { ul: [
+        '<b>Use it for fun.</b> Mouth on Fire is a game of keeping score. It is not medical advice. Eating very hot peppers can hurt you; you decide what goes in your mouth, not Piri.',
+        '<b>Be decent.</b> No harassment, no hate, no impersonation, no nudity, no spam. Nicknames, bios, group names and photos are filtered and can be reported; we review reports within 24 hours and may hide content, suspend or remove an account.',
+        '<b>Your content stays yours.</b> You give us permission to show your burns, nickname, picture and photos to the people this policy says can see them, and nothing more.',
+        '<b>One account, one person.</b> Keep your sign-in link to yourself. We may remove accounts that cheat, scrape or attack the service.',
+        '<b>No guarantees.</b> We do our best to keep the app running and your data safe, but it comes as it is. We are not liable for lost data, lost burns or a lost evening to a Carolina Reaper, beyond what the law requires.',
+        '<b>Dutch law</b> applies, and Dutch courts have jurisdiction.',
+      ]},
+      'Questions: <a href="mailto:privacy@piri.hot">privacy@piri.hot</a>.',
+    ]},
+  ],
+},
+nl: {
+  nav_lang: 'Taal', kicker: 'Mouth on Fire · Het Scoville-logboek', title: 'Privacybeleid',
+  meta: 'Versie 1 · [datum van eerste publicatie] · Geldt voor de app Mouth on Fire en de website piri.hot.',
+  toc_label: 'Op deze pagina', toc_terms: 'Gebruiksvoorwaarden',
+  f_made: 'Gemaakt in Nederland, met te veel pepers.', f_home: 'Home', f_privacy: 'Privacybeleid', f_contact: 'Contact',
+  intro: 'Mouth on Fire houdt de score bij van de hete pepers die je eet. Daarvoor bewaart de app een paar dingen over jou. Deze pagina zegt wat, waarom, wie het kan zien en hoe je er weer vanaf komt. In het kort: we bewaren wat de app nodig heeft, we verkopen niets, we tonen geen advertenties, en je kunt alles zelf exporteren of verwijderen op het profielscherm.',
+  policy: [
+    { id: 'who', h: '1. Wie is verantwoordelijk', body: [
+      'Piri, Nederland [postadres], is verantwoordelijk voor je gegevens in de app Mouth on Fire en op piri.hot. Vragen, verzoeken en klachten gaan naar <a href="mailto:privacy@piri.hot">privacy@piri.hot</a>. We antwoorden binnen een maand, zoals de wet vraagt.',
+    ]},
+    { id: 'what', h: '2. Wat we bewaren, en waarom', body: [
+      'We bewaren alleen wat de app nodig heeft om te werken. Niets op deze lijst verzamelen we stiekem: elke regel hieronder is iets wat je zelf typt, kiest of aantikt.',
+      { table: [
+        ['Wat', 'Waar het vandaan komt', 'Waarom we het bewaren'],
+        ['Je e-mailadres', 'Je typt het om in te loggen. Er is geen wachtwoord: je krijgt een inloglink per mail.', 'Om je binnen te laten en je die link te sturen. Meer niet: geen nieuwsbrieven.'],
+        ['Bijnaam, korte bio, profielfoto, taal', 'Je vult ze in op het profielscherm.', 'Zodat je groepsgenoten en, als je dat aanzet, het community-bord weten wie je bent.'],
+        ['Je burns', 'Elke peper die je logt: welke peper, hoeveel, hoe erg het deed, de datum, heel of in een gerecht.', 'Dat is de app. Je totaal, je Piri en je Piri\'s worden eruit berekend.'],
+        ['Privénotitie en plaats', 'De notitie bij een burn, en de plaatsnaam met kaartcoördinaten als je op de locatieknop tikt.', 'Voor je eigen geheugen. Alleen jij kunt het lezen; de app vraagt de telefoon eerst om toestemming en je kunt het wissen.'],
+        ['Bewijsfoto\'s', 'Foto\'s die je uit je fotorol aan een burn toevoegt.', 'Om je groep de peper te laten zien. Je groep ziet ze, niemand anders; je kunt ze vervangen of verwijderen.'],
+        ['Groepslidmaatschap', 'De groep die je maakt of waar je met een code bij gaat, en de burns die je in de feed deelt.', 'Zodat je groep elkaars burns en de scorekaart ziet.'],
+        ['Schakelaar community-bord', 'Een schakelaar op het profielscherm, standaard uit.', 'Staat hij aan, dan staan je bijnaam, foto en totaal op het openbare bord in de app. Zet hem uit en je verdwijnt ervan.'],
+        ['Mensen die je verbergt', 'De keuze "Verberg uit mijn feed" na een melding.', 'Zodat die mensen elkaars burns, scores en foto\'s niet meer zien, in beide richtingen.'],
+        ['Meldingen', 'Als je een persoon, foto of groep meldt: de reden, je toelichting en een optionele schermafbeelding.', 'Om de inhoud binnen 24 uur te beoordelen en er iets mee te doen. De gemelde persoon hoort niet wie heeft gemeld.'],
+        ['Crashmeldingen', 'Alleen als de app stukgaat en je op "Vertel het de makers van Piri" tikt: de fouttekst, het scherm, de appversie, het soort telefoon en de taal, en je account als je was ingelogd.', 'Om de fout te herstellen. Zonder die tik wordt niets verstuurd.'],
+      ]},
+      'We gebruiken geen advertenties, analyse- of volgsoftware in de app of op de site. We lezen je contacten, je andere foto\'s of je locatie op de achtergrond niet.',
+    ]},
+    { id: 'who-sees', h: '3. Wie kan wat zien', body: [
+      { ul: [
+        '<b>Jij</b> ziet alles van jezelf: burns, notities, plaatsen, foto\'s, Piri\'s, verborgen mensen en de export.',
+        '<b>Je groepsgenoten</b> zien je bijnaam, foto, burns (peper, hoeveelheid, pijn, datum), bewijsfoto\'s en je score. Niet je notities of plaatsen.',
+        '<b>Het community-bord</b> toont je bijnaam, foto en totaal aan iedereen die de app gebruikt, alleen zolang je schakelaar aanstaat.',
+        '<b>Vreemden</b> zien niets. Mensen die je verbergt, en mensen die jou verbergen, zien niets van elkaar.',
+        '<b>Wij</b> (de makers) kunnen je gegevens zien in een beheerscherm en gebruiken die toegang alleen voor moderatie, hulp en het herstellen van fouten.',
+      ]},
+    ]},
+    { id: 'services', h: '4. Diensten die we gebruiken', body: [
+      'Je gegevens staan bij <b>Supabase</b> in een datacentrum in Ierland, binnen de Europese Unie. De inlogmail wordt verstuurd door <b>Resend</b>. De pepercatalogus en de foto\'s erin komen uit openbare bronnen (Wikidata, Wikimedia Commons) en bevatten niets over jou.',
+      'Deze bedrijven verwerken gegevens in onze opdracht onder hun eigen verwerkersovereenkomsten. We verkopen, verhuren of delen je gegevens met niemand anders.',
+    ]},
+    { id: 'basis', h: '5. De wettelijke grondslag', body: [
+      'De privacywet in de Europese Unie (de AVG) vraagt ons om bij alles wat we bewaren een reden te noemen. Account, profiel, burns en groepen: nodig om de app te leveren waar je om vroeg (uitvoering van een overeenkomst). Plaats en foto\'s: je toestemming, gegeven als je op de knop tikt en de telefoon ze laat delen. Meldingen, verborgen mensen en crashmeldingen: ons gerechtvaardigd belang om de app veilig en werkend te houden. Niets wordt voor een ander doel bewaard.',
+    ]},
+    { id: 'retention', h: '6. Hoe lang we het bewaren', body: [
+      'Zolang je een account hebt. Verwijder je account op het profielscherm en je profiel, burns, notities, foto\'s, profielfoto en schermafbeeldingen bij meldingen zijn meteen weg; je meldingen en crashmeldingen verliezen de koppeling met jou. Reservekopieën bij onze hostingpartij worden binnen enkele weken overschreven.',
+      'Een account dat drie jaar niet is geopend, kunnen wij verwijderen, na een waarschuwingsmail.',
+    ]},
+    { id: 'rights', h: '7. Je rechten', body: [
+      'Het meeste kun je zelf in de app:',
+      { ul: [
+        '<b>Je gegevens inzien en meenemen:</b> profielscherm, "Gegevens exporteren". Je krijgt één bestand met alles.',
+        '<b>Verbeteren:</b> pas je profiel en je burns aan wanneer je wilt.',
+        '<b>Verwijderen:</b> profielscherm, "Account verwijderen". Meteen weg, zonder vragen.',
+        '<b>Stoppen met delen:</b> zet de bordschakelaar uit, verlaat je groep, verwijder een foto.',
+      ]},
+      'Voor al het andere, zoals bezwaar maken tegen hoe we je gegevens gebruiken of vragen wat we hebben, mail je <a href="mailto:privacy@piri.hot">privacy@piri.hot</a>. Ben je niet tevreden met ons antwoord, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens (autoriteitpersoonsgegevens.nl).',
+    ]},
+    { id: 'security', h: '8. Beveiliging', body: [
+      'Al het verkeer tussen de app en onze servers is versleuteld. De database controleert bij elk verzoek dat je alleen je eigen gegevens en die van je groep ziet. Inloggen gaat met een eenmalige link, dus er is geen wachtwoord om te stelen. Foto\'s staan in afgeschermde opslag en worden geleverd via kort geldige links.',
+    ]},
+    { id: 'children', h: '9. Kinderen', body: [
+      'Mouth on Fire is niet bedoeld voor mensen onder de 16. We bewaren bewust geen gegevens over hen; denk je dat we dat toch doen, mail ons dan en we verwijderen ze.',
+    ]},
+    { id: 'changes', h: '10. Wijzigingen van deze pagina', body: [
+      'Verandert er iets in wat we bewaren of waarom, dan verandert deze pagina mee en schuiven de versie en de datum bovenaan op. Een grote wijziging kondigen we ook in de app aan.',
+    ]},
+  ],
+  terms: [
+    { id: 'terms', h: 'Gebruiksvoorwaarden', body: [
+      'Kort en gewoon, want veel is het niet.',
+      { ul: [
+        '<b>Gebruik het voor de lol.</b> Mouth on Fire is een spel om de score bij te houden. Het is geen medisch advies. Heel hete pepers eten kan pijn doen; jij bepaalt wat er in je mond gaat, niet Piri.',
+        '<b>Doe normaal.</b> Geen pesten, geen haat, geen doen alsof je iemand anders bent, geen naakt, geen spam. Bijnamen, bio\'s, groepsnamen en foto\'s worden gefilterd en kunnen worden gemeld; we beoordelen meldingen binnen 24 uur en kunnen inhoud verbergen, een account schorsen of verwijderen.',
+        '<b>Jouw inhoud blijft van jou.</b> Je geeft ons toestemming om je burns, bijnaam, foto en foto\'s te tonen aan de mensen die ze volgens dit beleid mogen zien, en meer niet.',
+        '<b>Eén account, één persoon.</b> Houd je inloglink voor jezelf. Accounts die vals spelen, gegevens afschrapen of de dienst aanvallen, kunnen we verwijderen.',
+        '<b>Geen garanties.</b> We doen ons best om de app draaiend en je gegevens veilig te houden, maar hij komt zoals hij is. We zijn niet aansprakelijk voor verloren gegevens, verloren burns of een verloren avond aan een Carolina Reaper, verder dan de wet vereist.',
+        '<b>Nederlands recht</b> is van toepassing en de Nederlandse rechter is bevoegd.',
+      ]},
+      'Vragen: <a href="mailto:privacy@piri.hot">privacy@piri.hot</a>.',
+    ]},
+  ],
+},
+};
+
+// ---- rendering ----
+const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#39);)/g, '&amp;');
+function block(b) {
+  if (typeof b === 'string') return `<p>${b}</p>`;
+  if (b.ul) return `<ul>${b.ul.map((li) => `<li>${li}</li>`).join('')}</ul>`;
+  if (b.box) return `<div class="box">${b.box}</div>`;
+  if (b.table) {
+    const [head, ...rows] = b.table;
+    return `<table><thead><tr>${head.map((h) => `<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  }
+  return '';
+}
+const section = (s) => `<h2 id="${s.id}">${s.h}</h2>${s.body.map(block).join('')}`;
+
+function render(lang) {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = t[el.dataset.t]; });
+  document.getElementById('doc').innerHTML =
+    `<p class="intro">${t.intro}</p>` + t.policy.map(section).join('') +
+    `<hr class="divider">` + t.terms.map((s) => `<h2 class="terms-head" id="${s.id}">${s.h}</h2>${s.body.map(block).join('')}`).join('');
+  document.getElementById('toc').innerHTML =
+    `<div class="label">${t.toc_label}</div><ol>${t.policy.map((s) => `<li><a href="#${s.id}">${s.h.replace(/^\d+\.\s*/, '')}</a></li>`).join('')}</ol>` +
+    `<div class="terms"><a href="#terms">${t.toc_terms}</a></div>`;
+  try { localStorage.setItem('piri-lang', lang); } catch {}
+}
+
+// language switch: hash (#nl), then remembered, then the browser, then English
+const sel = document.getElementById('lang');
+sel.innerHTML = Object.entries(LANGS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('');
+let start = location.hash.slice(1);
+if (!T[start]) { try { start = localStorage.getItem('piri-lang'); } catch {} }
+if (!T[start]) start = (navigator.language || 'en').slice(0, 2);
+if (!T[start]) start = 'en';
+sel.value = start;
+sel.addEventListener('change', () => { history.replaceState(null, '', '#' + sel.value); render(sel.value); });
+render(start);
+</script>
+</body>
+</html>

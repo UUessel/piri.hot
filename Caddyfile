@@ -1,0 +1,23 @@
+# piri.hot: Caddy serves the pages in site/ and fetches the HTTPS certificate itself once the DNS points here.
+# Clean addresses: /privacy serves site/privacy.html. The home address sends people to /privacy until the landing page
+# is approved (Mouth on Fire backlog item MOF-69); then replace the redirect with the index page.
+
+piri.hot {
+	root * /repo/site
+	encode gzip
+
+	@home path /
+	redir @home /privacy 302
+
+	try_files {path} {path}.html
+	file_server
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+}
+
+www.piri.hot {
+	redir https://piri.hot{uri} permanent
+}

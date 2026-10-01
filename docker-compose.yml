@@ -1,0 +1,42 @@
+# piri.hot: the Mouth on Fire website as plain files, served by Caddy (HTTPS included).
+# Two containers: "web" serves the files in site/, "sync" keeps a copy of this repository up to date on the server
+# by pulling from GitHub every five minutes, so a push to main is live within minutes without a redeploy.
+# Start on the server with: docker compose up -d   (ports 80 and 443 must be free)
+services:
+  sync:
+    image: alpine/git:latest
+    restart: unless-stopped
+    volumes:
+      - repo:/repo
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        while true; do
+          if [ -d /repo/.git ]; then
+            git -C /repo pull -q --ff-only || echo "pull failed, retrying in five minutes"
+          else
+            rm -rf /repo/* /repo/.[!.]* 2>/dev/null
+            git clone -q --depth 1 https://github.com/UUessel/piri.hot /repo
+          fi
+          sleep 300
+        done
+
+  web:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - sync
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - repo:/repo:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    # --watch reloads the Caddyfile when a pull changes it; the pages themselves are read on every request
+    command: ["caddy", "run", "--config", "/repo/Caddyfile", "--adapter", "caddyfile", "--watch"]
+
+volumes:
+  repo:
+  caddy_data:
+  caddy_config:
