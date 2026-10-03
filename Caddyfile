@@ -1,7 +1,8 @@
 # piri.hot: Caddy serves the pages in site/ on port 80 inside the container. Traefik in front of it holds the real
 # ports and the HTTPS certificate, so Caddy's own HTTPS is switched off here.
 # Clean addresses: / serves site/index.html (the landing page), /privacy serves site/privacy.html, /open serves
-# site/open.html (where the sign-in link from the app's mail lands).
+# site/open.html (where the sign-in link from the app's mail lands), /storyboard-wikipepper serves site/storyboard-wikipepper.html (the
+# WikiPepper storyboard, not listed by search engines).
 
 {
 	auto_https off

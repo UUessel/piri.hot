@@ -1,0 +1,430 @@
+<!doctype html>
+<!-- piri.hot/storyboard-wikipepper. Generated from preview/mockup-storyboard.html by scripts/build-site.ts in the MoF repository: edit the mockup there, then rebuild. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storyboard · Mouth on Fire and WikiPepper</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="How the Mouth on Fire app works and how WikiPepper becomes the one source of its pepper catalog, in thirteen panels.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  :root {
+    --bg: #FBF5EC; --bg2: #EFE4D6; --card: #FFFFFF; --ink: #1E1410; --ink2: #57443A; --line: #E8DCCF; --accent: #D6321F; --sun: #FFF1B8; --plum: #6B1030; --note: #FFF8EA; --note-line: #E0CFBA;
+    --wp: #2F7A3E; --wp-soft: #E4F2E5;
+    --display: 'Baloo 2', 'Trebuchet MS', sans-serif; --body: 'Nunito', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg2); color: var(--ink); font-family: var(--body); line-height: 1.4; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.1; margin: 0; }
+
+  /* one page: the storyboard board */
+  .board { max-width: 1600px; margin: 0 auto; padding: 18px 20px 24px; }
+  .head { display: flex; align-items: center; gap: 18px; margin-bottom: 14px; }
+  .head .sun { width: 56px; height: 56px; border-radius: 50%; background: var(--sun); border: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; flex: none; }
+  .head h1 { font-size: 30px; }
+  .head h1 span { color: var(--accent); }
+  .head .sub { font-size: 14px; color: var(--ink2); }
+  .legend { margin-left: auto; display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--ink2); white-space: nowrap; }
+  .tag { display: inline-block; font-family: var(--display); font-weight: 800; font-size: 10px; letter-spacing: .4px; text-transform: uppercase; padding: 1px 8px; border-radius: 999px; border: 2px solid var(--ink); vertical-align: middle; background: #fff; }
+  .tag.exists { background: var(--sun); }
+  .tag.proposal { background: var(--wp-soft); border-color: var(--wp); color: var(--wp); }
+
+  .band { border: 2px solid var(--ink); border-radius: 18px; background: var(--bg); box-shadow: 5px 5px 0 var(--ink); padding: 12px 14px 14px; }
+  .band + .band { margin-top: 18px; }
+  .band h2 { font-size: 20px; margin-bottom: 10px; display: flex; align-items: baseline; gap: 10px; }
+  .band h2 small { font-family: var(--body); font-weight: 800; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink2); }
+  .band h2 .intro { font-family: var(--body); font-weight: 400; font-size: 13px; color: var(--ink2); }
+  .band.green { border-color: var(--wp); }
+  .band.green h2 small { color: var(--wp); }
+  .panels { display: grid; gap: 12px; }
+  .band.p1 .panels { grid-template-columns: repeat(4, 1fr); }
+  .band.p2 .panels { grid-template-columns: repeat(9, 1fr); }
+  .panel { background: var(--card); border: 2px solid var(--ink); border-radius: 14px; padding: 10px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .panel .n { font-family: var(--display); font-weight: 800; font-size: 12px; color: var(--ink2); display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+  .panel .n b { color: var(--ink); font-size: 13px; }
+  .panel .thumb { height: 545px; overflow: hidden; display: flex; align-items: flex-start; justify-content: center; border-radius: 10px; background: var(--bg2); padding: 8px 4px; }
+  .panel .thumb > * { zoom: 0.42; }
+  .panel .thumb.mid { align-items: center; }
+  .panel .cap { font-size: 12px; color: var(--ink2); margin: 0; }
+  .panel .cap b { color: var(--ink); }
+  .band.p1 .panel { flex-direction: row; }
+  .band.p1 .panel .thumb { width: 160px; flex: none; height: 545px; }
+  .band.p1 .panel .side { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .band.p1 .panel .cap { font-size: 13px; }
+
+  /* WikiPepper wordmark: a text stand-in until the real logo may be used */
+  .wp { display: inline-flex; align-items: center; gap: 5px; background: var(--wp); color: #fff; font-family: var(--display); font-weight: 800; font-size: 13px; padding: 2px 9px 2px 6px; border-radius: 999px; border: 2px solid var(--ink); line-height: 1.3; white-space: nowrap; }
+  .wp svg { width: 14px; height: 14px; }
+  .wp.big { font-size: 18px; padding: 4px 14px 4px 10px; }
+  .wp.big svg { width: 20px; height: 20px; }
+
+  /* phone, as drawn in the app mockups (full size; shrunk by the panel) */
+  .phone { background: var(--bg); border: 2px solid var(--ink); border-radius: 28px; padding: 14px 12px 10px; box-shadow: 6px 6px 0 var(--ink); display: flex; flex-direction: column; gap: 10px; width: 340px; flex: none; position: relative; }
+  .phone .top { display: flex; justify-content: space-between; align-items: center; }
+  .phone .title { font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1; }
+  .phone .brand { font-family: var(--display); font-weight: 800; font-size: 20px; }
+  .phone .link { color: var(--accent); font-weight: 800; font-size: 13px; }
+  .band2 { background: var(--wp-soft); border: 2px solid var(--wp); border-radius: 12px; padding: 8px 10px; display: flex; gap: 8px; align-items: center; font-size: 12px; line-height: 1.3; }
+  .band2 b { color: var(--wp); }
+  .search { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; padding: 8px 12px; color: #8a6e64; font-size: 14px; }
+  .chips { display: flex; gap: 6px; overflow: hidden; }
+  .chip { border: 2px solid var(--ink); border-radius: 999px; background: var(--card); padding: 2px 9px; font-weight: 700; font-size: 11px; white-space: nowrap; }
+  .chip.on { background: var(--ink); color: #fff; }
+  .prow { display: flex; gap: 10px; align-items: center; background: var(--card); border: 2px solid var(--ink); border-radius: 14px; padding: 8px; }
+  .prow .ph { width: 48px; height: 48px; border-radius: 10px; border: 2px solid var(--ink); overflow: hidden; flex: none; }
+  .prow .ph svg { display: block; }
+  .prow .nm { font-family: var(--display); font-weight: 800; font-size: 15px; line-height: 1.1; }
+  .prow .ln { font-size: 11px; color: var(--ink2); font-style: italic; }
+  .prow .shu { margin-left: auto; text-align: right; font-size: 11px; color: var(--ink2); white-space: nowrap; }
+  .prow .shu b { display: block; font-family: var(--display); font-size: 14px; color: var(--ink); }
+  .heat { display: inline-block; border: 2px solid var(--ink); border-radius: 999px; padding: 1px 8px; font-weight: 800; font-size: 10px; background: var(--sun); }
+  .heat.hot { background: var(--plum); color: #fff; }
+  .foot { font-size: 11px; color: var(--ink2); text-align: center; padding: 4px 0 2px; }
+  .foot b { color: var(--accent); }
+  .tabs { display: flex; justify-content: space-around; border-top: 2px solid var(--ink); padding-top: 8px; margin-top: 2px; font-size: 10px; font-weight: 800; color: var(--ink2); }
+  .tabs span { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .tabs i { width: 18px; height: 18px; border-radius: 6px; border: 2px solid var(--ink2); display: block; }
+  .tabs span.on { color: var(--accent); }
+  .tabs span.on i { border-color: var(--accent); background: var(--accent); }
+  .card { background: var(--card); border: 2px solid var(--ink); border-radius: 14px; padding: 10px 12px; font-size: 13px; }
+  .card h3 { font-size: 16px; margin-bottom: 4px; }
+  .card .lab { font-weight: 800; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink2); }
+  .card .num { font-family: var(--display); font-weight: 800; font-size: 20px; line-height: 1.1; }
+  .card .muted, .muted { font-size: 11px; color: var(--ink2); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .three .card { text-align: center; padding: 8px 6px; }
+  .btn { display: block; background: var(--accent); color: #fff; font-family: var(--display); font-weight: 800; font-size: 14px; padding: 8px 12px; border-radius: 999px; border: 2px solid var(--ink); text-align: center; }
+  .btn.ghost { background: var(--card); color: var(--ink); }
+  .btn.wp { background: var(--wp); color: #fff; display: block; font-size: 14px; padding: 8px 12px; border-radius: 999px; }
+  .src { border-color: var(--wp); background: #FBFFFB; }
+  .src .head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .src .head b { font-family: var(--display); font-weight: 800; font-size: 15px; }
+  .src .line { font-size: 12px; color: var(--ink2); }
+  .src .acts { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+  .src .upd { font-size: 11px; color: #8a6e64; margin-top: 6px; }
+  .fact { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; border-top: 1px solid var(--line); padding: 4px 0; }
+  .fact:first-child { border-top: 0; }
+  .fact span:first-child { color: var(--ink2); }
+  .names { display: flex; flex-wrap: wrap; gap: 4px; }
+  .names span { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 1px 7px; font-size: 10px; }
+  .note { font-size: 10px; color: #8a6e64; text-align: center; }
+  .burn { display: flex; align-items: center; gap: 8px; font-size: 12px; border-top: 1px solid var(--line); padding: 5px 0; }
+  .burn:first-of-type { border-top: 0; }
+  .burn b { font-family: var(--display); }
+  .burn .shu { margin-left: auto; font-family: var(--display); font-weight: 800; color: var(--accent); white-space: nowrap; }
+  .pain { display: flex; align-items: flex-end; gap: 2px; }
+  .pain svg { display: block; }
+  .seg { display: flex; border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; font-size: 12px; font-weight: 800; }
+  .seg span { flex: 1; text-align: center; padding: 5px; }
+  .seg span.on { background: var(--ink); color: #fff; }
+  .field { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; padding: 7px 12px; font-size: 13px; }
+  .field.empty { color: #8a6e64; }
+  .stars { font-size: 16px; letter-spacing: 2px; color: #E9A800; }
+  .stage { display: flex; gap: 10px; align-items: center; }
+  .stage .nm { font-family: var(--display); font-weight: 800; font-size: 14px; color: #E4611F; }
+  .stage .ds { font-size: 11px; color: var(--ink2); }
+  .hero { position: relative; border: 2px solid var(--ink); border-radius: 16px; overflow: hidden; height: 190px; }
+  .hero svg { display: block; width: 100%; height: 100%; }
+  .hero .credit { position: absolute; right: 8px; bottom: 8px; background: rgba(30,20,16,.72); color: #fff; font-size: 9px; padding: 2px 7px; border-radius: 999px; }
+  .hero .hp { position: absolute; right: 8px; top: 8px; }
+  .hero .back { position: absolute; left: 8px; top: 8px; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.9); border: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
+
+  /* the other drawings, full size, shrunk by the panel */
+  .bigphoto { position: relative; border: 2px solid var(--ink); border-radius: 18px; overflow: hidden; box-shadow: 6px 6px 0 var(--ink); background: #000; width: 340px; }
+  .bigphoto svg { display: block; width: 100%; height: auto; }
+  .bigphoto .credit { position: absolute; right: 10px; bottom: 10px; background: rgba(30,20,16,.72); color: #fff; font-size: 11px; padding: 3px 10px; border-radius: 999px; }
+  .split { width: 340px; display: flex; flex-direction: column; gap: 12px; }
+  .split .box { background: var(--card); border: 2px solid var(--ink); border-radius: 16px; padding: 12px 14px; box-shadow: 4px 4px 0 var(--ink); }
+  .split .box.green { border-color: var(--wp); }
+  .split h3 { font-size: 16px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .split ul { margin: 0; padding-left: 16px; font-size: 13px; }
+  .share { width: 340px; background: var(--card); border: 2px solid var(--ink); border-radius: 20px; box-shadow: 6px 6px 0 var(--ink); overflow: hidden; }
+  .share .strip { display: flex; height: 8px; }
+  .share .strip i { flex: 1; }
+  .share .body { padding: 16px 18px 12px; display: flex; gap: 14px; align-items: center; }
+  .share .body .t { font-size: 14px; color: var(--ink2); }
+  .share .body .t b { display: block; font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--ink); line-height: 1.1; }
+  .share .body .t .shu { display: block; font-family: var(--display); font-weight: 800; font-size: 28px; color: var(--accent); line-height: 1.1; margin-top: 4px; }
+  .share .bottom { background: var(--bg); border-top: 2px solid var(--ink); padding: 8px 18px; font-size: 11px; color: var(--ink2); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .share .bottom b { font-family: var(--display); }
+  .share .bottom .wpline { color: var(--wp); font-weight: 800; }
+  .diagram { width: 340px; background: var(--card); border: 2px solid var(--ink); border-radius: 18px; box-shadow: 6px 6px 0 var(--ink); padding: 8px; }
+  .diagram svg { display: block; width: 100%; height: auto; }
+  .browser { width: 340px; background: #FFFFFF; border: 2px solid var(--ink); border-radius: 18px; overflow: hidden; box-shadow: 4px 4px 0 var(--ink); }
+  .browser .bar { background: #EFE4D6; border-bottom: 2px solid var(--ink); padding: 8px 12px; font-size: 12px; color: var(--ink2); display: flex; gap: 8px; align-items: center; }
+  .browser .bar .url { flex: 1; background: #FFFFFF; border-radius: 999px; padding: 3px 10px; border: 1px solid var(--line); }
+  .page { background: var(--bg); padding: 14px 14px 0; font-size: 12px; }
+  .page .sect { background: var(--card); border: 2px solid var(--wp); border-radius: 14px; padding: 12px; }
+  .page .sect h3 { font-size: 15px; margin-bottom: 4px; }
+  .page .sect p { margin: 0 0 8px; color: var(--ink2); }
+  .page .sfoot { margin-top: 12px; border-top: 2px solid var(--ink); padding: 8px 0 12px; font-size: 10px; color: var(--ink2); display: flex; flex-direction: column; gap: 3px; }
+  .page .sfoot b { color: var(--wp); }
+  .store { background: var(--card); border: 2px solid var(--ink); border-radius: 14px; padding: 10px 12px; margin: 12px 0 14px; font-size: 12px; }
+  .store .lab { font-weight: 800; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink2); }
+  .store p { margin: 3px 0 0; }
+  .store mark { background: var(--wp-soft); color: var(--ink); padding: 0 3px; border-radius: 3px; }
+
+  .closing { margin-top: 14px; text-align: center; font-size: 12px; color: var(--ink2); }
+  @media (max-width: 1400px) { .band.p2 .panels { grid-template-columns: repeat(5, 1fr); } }
+  @media (max-width: 1000px) { .band.p1 .panels { grid-template-columns: repeat(2, 1fr); } .band.p2 .panels { grid-template-columns: repeat(3, 1fr); } .legend { display: none; } }
+  @media (max-width: 640px) { .band.p1 .panels, .band.p2 .panels { grid-template-columns: 1fr; } .band.p1 .panel { flex-direction: column; } .band.p1 .panel .thumb { width: auto; } }
+</style>
+</head>
+<body>
+
+<div class="board">
+  <div class="head">
+    <div class="sun" id="head-piri"></div>
+    <div><h1>Mouth on Fire <span>and</span> WikiPepper</h1><div class="sub">Storyboard: how the app works, and how WikiPepper becomes the one source of its pepper catalog.</div></div>
+    <div class="legend"><span class="tag exists">In the app today</span><span class="tag proposal">Proposal</span><span class="tag">Both</span></div>
+  </div>
+
+  <div class="band p1">
+    <h2><small>Part 1</small>How Mouth on Fire works <span class="intro">· you log every pepper you eat, the app keeps your Scoville total, Piri grows with it. A pepper catalog sits behind the log.</span></h2>
+    <div class="panels">
+      <div class="panel">
+        <div class="thumb"><div class="phone">
+          <div class="top"><div class="brand">Mouth on Fire</div><span class="chip">EN ▾</span></div>
+          <div class="card"><div class="lab">Your Scoville total</div><div class="num" style="font-size:28px;color:var(--accent)">2,418,900 <span style="font-size:14px;color:var(--ink2)">SHU</span></div>
+            <div class="stage"><div id="home-piri" style="width:64px;height:80px"></div><div><div class="nm">Sweaty</div><div class="ds">Piri's stage for this total.</div></div></div></div>
+          <div class="three"><div class="card"><div class="num">23</div><div class="muted">burns</div></div><div class="card"><div class="num">14</div><div class="muted">peppers</div></div><div class="card"><div class="num">6</div><div class="muted">countries</div></div></div>
+          <div class="card"><div class="lab">Hottest so far</div><div style="font-family:var(--display);font-weight:800">Carolina Reaper <span class="muted">1,641,183 SHU</span></div></div>
+          <div class="card"><div class="lab">Latest burns</div>
+            <div class="burn"><span class="pain" data-pain="5"></span><b>Carolina Reaper</b><span class="muted">today</span><span class="shu">1,641,183</span></div>
+            <div class="burn"><span class="pain" data-pain="3"></span><b>Habanero</b><span class="muted">Tue</span><span class="shu">250,000</span></div>
+            <div class="burn"><span class="pain" data-pain="1"></span><b>Jalapeño</b><span class="muted">Mon</span><span class="shu">1,312</span></div></div>
+          <div class="tabs"><span class="on"><i></i>Home</span><span><i></i>Peppers</span><span><i></i>Log</span><span><i></i>Group</span><span><i></i>Profile</span></div>
+        </div></div>
+        <div class="side"><div class="n"><b>1 · Home</b><span class="tag exists">Today</span></div><p class="cap">Your Scoville total, Piri in the stage that total has earned, your numbers, your hottest pepper and your latest burns.</p></div>
+      </div>
+      <div class="panel">
+        <div class="thumb"><div class="phone">
+          <div class="top"><div class="title">Log a burn</div></div>
+          <div class="card" style="padding:6px 10px"><div class="lab">Pepper</div><div style="font-family:var(--display);font-weight:800;font-size:16px">Carolina Reaper <span class="muted">1,641,183 SHU</span></div></div>
+          <div class="seg"><span class="on">Whole pepper</span><span>In a dish</span></div>
+          <div class="card" style="padding:6px 10px"><div class="lab">How much</div><div>1 pepper</div></div>
+          <div class="card" style="padding:6px 10px"><div class="lab">Pain</div><div class="pain" data-pain="4" data-big="1"></div><div class="muted">Regret</div></div>
+          <div class="card" style="padding:6px 10px"><div class="lab">Taste</div><div class="stars">★★★★☆</div></div>
+          <div class="field empty">A private note, only for you</div>
+          <span class="btn">Log it</span>
+          <div class="tabs"><span><i></i>Home</span><span><i></i>Peppers</span><span class="on"><i></i>Log</span><span><i></i>Group</span><span><i></i>Profile</span></div>
+        </div></div>
+        <div class="side"><div class="n"><b>2 · Log a burn</b><span class="tag exists">Today</span></div><p class="cap">Pick the pepper, whole or in a dish, how much, the pain with five little Piri's, the taste, a private note. The app does the Scoville arithmetic.</p></div>
+      </div>
+      <div class="panel">
+        <div class="thumb"><div class="phone" data-peppers-tab="plain"></div></div>
+        <div class="side"><div class="n"><b>3 · The Peppers tab</b><span class="tag exists">Today</span></div><p class="cap">The catalog: search, heat filters, one row per pepper. "Which pepper is this?" looks a pepper up by colour, shape and size. Today: 315 peppers, 107 switched on, from Wikidata, Wikipedia, books and a university publication.</p></div>
+      </div>
+      <div class="panel">
+        <div class="thumb"><div class="phone" data-pepper-page="plain"></div></div>
+        <div class="side"><div class="n"><b>4 · The pepper page</b><span class="tag exists">Today</span></div><p class="cap">Photo with heat stage and credit, names, your burns, heat with "how many jalapeños", origin, story, fun fact from Piri, facts, names in other languages, the "not yet checked" note, "I ate this". <b>Stays exactly like this.</b></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band p2 green">
+    <h2><small>Part 2</small>How WikiPepper fits in <span class="intro">· WikiPepper becomes the one source of the catalog, says so on every screen, and the app sends people to WikiPepper.</span></h2>
+    <div class="panels">
+      <div class="panel">
+        <div class="n"><b>5 · One source</b><span class="tag proposal">Proposal</span></div>
+        <div class="thumb"><div class="split">
+          <div class="box green"><h3><span class="wp" data-wp></span> From WikiPepper only</h3><ul><li>The list of peppers: 5,300 instead of 315</li><li>English name, species, origin</li><li>Heat range (WikiPepper's wins)</li><li>Pod colour and shape</li><li>Photo, photographer, licence</li></ul></div>
+          <div class="box"><h3>Added by Mouth on Fire</h3><ul><li>The story, in Wessel's words, eight languages</li><li>The name in 27 languages</li><li>The six heat stage names</li><li>"How many jalapeños", fun fact, weight</li></ul></div>
+        </div></div>
+        <p class="cap">One source of facts, one layer of words on top. The pepper page keeps its layout.</p>
+      </div>
+      <div class="panel">
+        <div class="n"><b>6 · Peppers tab</b><span class="tag">Both</span></div>
+        <div class="thumb"><div class="phone" data-peppers-tab="wp"></div></div>
+        <p class="cap">The tab keeps its name. New: the <b>Powered by WikiPepper</b> band under the title, and a Sources line under the list.</p>
+      </div>
+      <div class="panel">
+        <div class="n"><b>7 · Pepper page</b><span class="tag">Both</span></div>
+        <div class="thumb"><div class="phone" data-pepper-page="source"></div></div>
+        <p class="cap">Every part kept. New: the <b>source card</b> with the photographer and licence, <b>More on WikiPepper</b> and <b>Spotted a mistake? Tell WikiPepper</b>.</p>
+      </div>
+      <div class="panel">
+        <div class="n"><b>8 · Photos</b><span class="tag">Both</span></div>
+        <div class="thumb mid"><div class="bigphoto"><span data-photo="big"></span><div class="credit">Photo: J. Example, CC BY-SA 4.0</div></div></div>
+        <p class="cap"><b>wikipepper.org</b> stamped into the picture file at import, bottom left. The credit with the photographer's name bottom right, as today.</p>
+      </div>
+      <div class="panel">
+        <div class="n"><b>9 · Not here yet</b><span class="tag proposal">Proposal</span></div>
+        <div class="thumb"><div class="phone">
+          <div class="top"><div class="title">Peppers</div><div class="link">Which pepper is this?</div></div>
+          <div class="search" style="color:var(--ink)">Trinidad Moruga Yellow</div>
+          <div class="chips"><span class="chip on">All</span><span class="chip">Tickle</span><span class="chip">Sweaty</span><span class="chip">Dragon Roar</span></div>
+          <div class="card" style="text-align:center;padding:16px 12px">
+            <div style="width:72px;height:90px;margin:0 auto 6px" id="sad-piri"></div>
+            <h3>Not in the app yet</h3>
+            <p style="margin:0 0 10px;font-size:13px;color:var(--ink2)">WikiPepper knows 5,300 peppers. Look there, or add it and it shows up here after the next update.</p>
+            <div class="src" style="border:0;background:none;padding:0"><div class="acts"><span class="btn wp">Find it on WikiPepper ↗</span><span class="btn ghost">Add it to WikiPepper ↗</span></div></div>
+          </div>
+          <div class="foot">Pepper facts and photos: WikiPepper · <b>Sources</b></div>
+          <div class="tabs"><span><i></i>Home</span><span class="on"><i></i>Peppers</span><span><i></i>Log</span><span><i></i>Group</span><span><i></i>Profile</span></div>
+        </div></div>
+        <p class="cap">A search that finds nothing sends the user to WikiPepper: find it there, or add it there. No "add a pepper" form in the app.</p>
+      </div>
+      <div class="panel">
+        <div class="n"><b>10 · Share card</b><span class="tag">Both</span></div>
+        <div class="thumb mid"><div class="share">
+          <div class="strip"><i style="background:#7DAA68"></i><i style="background:#E9C64A"></i><i style="background:#F0953A"></i><i style="background:#E4611F"></i><i style="background:#C8321E"></i><i style="background:#6B1030"></i></div>
+          <div class="body"><div style="width:80px;height:100px;flex:none" id="share-piri"></div><div class="t">Wessel just ate a<b>Carolina Reaper</b><span class="shu">1,641,183 SHU</span>whole. Pain 9 of 10.</div></div>
+          <div class="bottom"><span><b>Mouth on Fire</b> · piri.hot</span><span class="wpline">Pepper data: wikipepper.org</span></div>
+        </div></div>
+        <p class="cap">The picture a user posts after a burn exists today. New: the line <b>Pepper data: wikipepper.org</b> on every one.</p>
+      </div>
+      <div class="panel">
+        <div class="n"><b>11 · Sources</b><span class="tag proposal">Proposal</span></div>
+        <div class="thumb"><div class="phone">
+          <div class="top"><div class="link">‹ Profile</div><div class="title">Sources</div><div style="width:50px"></div></div>
+          <div class="card src">
+            <div class="head"><span class="wp big" data-wp></span></div>
+            <div class="line" style="color:var(--ink)">The community pepper database: names, species, origin, heat, pod colour and shape, and the photos of every pepper in this app. Non-profit, run by its curators and volunteers.</div>
+            <div class="acts"><span class="btn wp">Support WikiPepper ♥</span><span class="btn ghost">Visit wikipepper.org ↗</span></div>
+          </div>
+          <div class="card"><h3>Mouth on Fire</h3><div class="muted">The stories, the translations, the heat stage names and the fun facts are written by Wessel, in his own words.</div></div>
+          <div class="card"><h3>Translations</h3><div class="muted">The app texts in eight languages; drafts are marked as such until a person has read them.</div></div>
+        </div></div>
+        <p class="cap">One screen says where everything comes from, with a <b>Support WikiPepper</b> button to WikiPepper's donation page. At first start: "Pepper knowledge by WikiPepper".</p>
+      </div>
+      <div class="panel">
+        <div class="n"><b>12 · Both ways</b><span class="tag proposal">Proposal</span></div>
+        <div class="thumb mid"><div class="diagram" id="diagram"></div></div>
+        <p class="cap">WikiPepper stays the single source of truth: its changes come in every night through an API, an automatic exchange between the two systems. Corrections go back: a user taps "Tell WikiPepper", Wessel checks it once, the curators get it.</p>
+      </div>
+      <div class="panel">
+        <div class="n"><b>13 · Outside the app</b><span class="tag proposal">Proposal</span></div>
+        <div class="thumb mid"><div class="browser">
+          <div class="bar"><span>‹ ›</span><span class="url">https://piri.hot</span></div>
+          <div class="page">
+            <div class="sect"><h3>The peppers come from WikiPepper</h3><p>Every pepper in Mouth on Fire, its names, heat, origin and photo, comes from WikiPepper, the community pepper database with 5,300 varieties.</p><span class="wp" data-wp></span></div>
+            <div class="store"><div class="lab">Store listing</div><p>Log the peppers you eat and watch your Scoville total climb. <mark>The pepper catalog is powered by WikiPepper (wikipepper.org).</mark></p></div>
+            <div class="sfoot"><span>Pepper data: <b>WikiPepper</b> · Sources</span><span>© 2026 Mouth on Fire · piri.hot</span></div>
+          </div>
+        </div></div>
+        <p class="cap">A WikiPepper section and a footer line on piri.hot, and one sentence in the Google Play and App Store listings.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing">Mouth on Fire · piri.hot · Wessel, mof@piri.hot</div>
+</div>
+
+<script src="badges-draw.js"></script>
+<script>
+  // WikiPepper wordmark: a text stand-in (small pepper + the name) until the real logo may be used.
+  const wpMark = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4c-4 4-5 10-1 15 2 2 6 2 8-1 3-4 3-10-1-14 C12 2 10 2 8 4z" fill="#fff" stroke="#1E1410" stroke-width="2" stroke-linejoin="round"/><path d="M12 4c1-2 4-2 5 0" fill="none" stroke="#1E1410" stroke-width="2.5" stroke-linecap="round"/></svg><span>WikiPepper</span>`;
+
+  // The fake pepper photo: a drawing, never a real WikiPepper picture. `mark` draws the stamped-in text.
+  function photo(w, h, mark, seed = 0, label = true) {
+    const id = 'g' + Math.round(Math.random() * 1e6);
+    const stamp = mark ? `<text x="${Math.round(w * 0.04)}" y="${h - Math.round(h * 0.06)}" font-family="Nunito, Arial, sans-serif" font-weight="800" font-size="${Math.round(h * 0.075)}" fill="#fff" fill-opacity=".88" stroke="#1E1410" stroke-opacity=".45" stroke-width="${Math.max(1, h * 0.012)}" paint-order="stroke">wikipepper.org</text>` : '';
+    const hue = ['#E43D28', '#E9612A', '#5E9E4C'][seed] || '#E43D28';
+    return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true">
+      <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3D9B1"/><stop offset="1" stop-color="#B9794A"/></linearGradient></defs>
+      <rect width="${w}" height="${h}" fill="url(#${id})"/>
+      <ellipse cx="${w * 0.5}" cy="${h * 0.86}" rx="${w * 0.34}" ry="${h * 0.06}" fill="#1E1410" fill-opacity=".18"/>
+      <g transform="translate(${w * 0.5} ${h * 0.52}) scale(${Math.min(w, h) / 150}) translate(-70 -78)">
+        <path d="M50 22 C46 10 56 4 62 12 C70 6 82 10 78 22 Z" fill="#5E9E4C" stroke="#1E1410" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M40 30 C14 50 22 104 50 132 C60 142 72 140 80 128 C102 100 106 60 86 34 C76 20 50 20 40 30 Z" fill="${hue}" stroke="#1E1410" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M48 40 C40 62 44 96 58 118" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="5" stroke-linecap="round"/>
+        <path d="M62 36 C58 60 60 90 70 116 M78 40 C86 66 88 96 80 120" fill="none" stroke="#1E1410" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      ${label ? `<text x="42" y="18" text-anchor="start" font-family="Nunito, Arial, sans-serif" font-size="${Math.max(8, Math.round(h * 0.04))}" fill="#1E1410" fill-opacity=".4">example drawing, not a photo</text>` : ''}
+      ${stamp}
+    </svg>`;
+  }
+
+  // Piri and the five pain steps, from the shared drawing code.
+  const piri = (mood, size, body) => `<svg width="${size}" height="${Math.round(size * 1.25)}" viewBox="0 0 120 150" aria-hidden="true">${pepper(mood, false, body)}</svg>`;
+  const STEPS = [{ color: '#7DAA68', mood: 'happy' }, { color: '#E9C64A', mood: 'squint' }, { color: '#F0953A', mood: 'cry' }, { color: '#C8321E', mood: 'dead' }, { color: '#6B1030', mood: 'smoked' }];
+  const painMeter = (rating, big) => STEPS.map((s, i) => {
+    const size = (big ? 16 : 9) + i * (big ? 4 : 2), lit = i < rating;
+    return `<svg width="${size}" height="${Math.round(size * 1.25)}" viewBox="0 0 120 150" aria-hidden="true">${pepper(s.mood, !lit, s.color)}</svg>`;
+  }).join('');
+
+  const thumb = (seed) => photo(48, 48, false, seed, false);
+  const rows = () => `
+    <div class="prow"><div class="ph">${thumb(0)}</div><div><div class="nm">Carolina Reaper</div><div class="ln">Capsicum chinense</div></div><div class="shu"><b>1,641,183</b> SHU</div></div>
+    <div class="prow"><div class="ph">${thumb(1)}</div><div><div class="nm">Habanero</div><div class="ln">Capsicum chinense</div></div><div class="shu"><b>250,000</b> SHU</div></div>
+    <div class="prow"><div class="ph">${thumb(2)}</div><div><div class="nm">Jalapeño</div><div class="ln">Capsicum annuum</div></div><div class="shu"><b>5,250</b> SHU</div></div>
+    <div class="prow"><div class="ph">${thumb(0)}</div><div><div class="nm">Ghost Pepper</div><div class="ln">Capsicum chinense</div></div><div class="shu"><b>1,041,427</b> SHU</div></div>`;
+
+  // The Peppers tab, as today (`plain`) or with the WikiPepper band and the Sources line (`wp`).
+  function peppersTab(wp) {
+    return `
+      <div class="top"><div class="title">Peppers</div><div class="link">Which pepper is this?</div></div>
+      ${wp ? `<div class="band2"><span class="wp">${wpMark}</span><span>Powered by <b>WikiPepper</b>, the community pepper database: 5,300 varieties.</span></div>` : ''}
+      <div class="search">Search a pepper</div>
+      <div class="chips"><span class="chip on">All</span><span class="chip">Tickle</span><span class="chip">Sweaty</span><span class="chip">Dragon Roar</span></div>
+      ${rows()}
+      ${wp ? '<div class="foot">Pepper facts and photos: WikiPepper · <b>Sources</b></div>' : ''}
+      <div class="tabs"><span><i></i>Home</span><span class="on"><i></i>Peppers</span><span><i></i>Log</span><span><i></i>Group</span><span><i></i>Profile</span></div>`;
+  }
+
+  // The pepper page, every part the app has today; `withSource` adds the WikiPepper card (panel 7).
+  function pepperPage(withSource) {
+    const credit = withSource ? 'Photo: J. Example, CC BY-SA 4.0' : 'Photo: A. Photographer, CC BY-SA 4.0';
+    return `
+      <div class="hero">${photo(316, 190, withSource)}<div class="back">‹</div><span class="hp heat hot">Dragon Roar</span><div class="credit">${credit}</div></div>
+      <div><div class="title">Carolina Reaper</div><div class="muted" style="font-size:12px">Carolina Reaper · <i>Capsicum chinense</i> · cultivar · also "HP22B"</div></div>
+      <div class="card"><div class="lab">Your burns</div><div class="burn"><span class="pain">${painMeter(5)}</span><b>Best: whole</b><span class="muted">2 Oct</span><span class="shu">1,641,183</span></div><div class="muted">Your best burn counts for your total · All burns ›</div></div>
+      <div class="two">
+        <div class="card"><div class="lab">Average heat</div><div class="num">1,641,183</div><div class="muted">SHU · 1,400,000 to 2,200,000</div></div>
+        <div class="card"><div class="lab">Versus</div><div class="num">312×</div><div class="muted">a jalapeño</div></div>
+      </div>
+      <div class="card"><div class="lab">Origin</div><div>South Carolina, United States</div><div class="muted">Bred by Ed Currie of the PuckerButt Pepper Company, world record holder from 2013 to 2023.</div></div>
+      <div class="card"><div class="lab">Story</div><div style="font-size:12px">A gnarled red pod with a scorpion tail. The first bite is sweet and fruity; then it is not. Eat it whole and your evening is over.</div></div>
+      <div class="card" style="display:flex;gap:10px;align-items:center"><div style="width:40px;flex:none">${piri('cool', 40)}</div><div><div class="lab">Fun fact from Piri</div><div style="font-size:12px">Its creator says he eats one every day. Piri does not recommend this.</div></div></div>
+      <div class="card">
+        <div class="fact"><span>Flavour</span><span>fruity, then brutal</span></div>
+        <div class="fact"><span>Colour when ripe</span><span>red</span></div>
+        <div class="fact"><span>Used in</span><span>sauces, dares</span></div>
+        <div class="fact"><span>Weight</span><span>about 7 g</span></div>
+      </div>
+      <div class="names"><span>NL Carolina reaper</span><span>DE Carolina Reaper</span><span>TH แคโรไลนา รีปเปอร์</span><span>ES Carolina Reaper</span><span>+ 23 more</span></div>
+      ${withSource ? `<div class="card src">
+        <div class="head"><span class="wp">${wpMark}</span><b>From WikiPepper</b></div>
+        <div class="line">Pepper facts and photo from the WikiPepper community database.</div>
+        <div class="line">Photo: J. Example · CC BY-SA 4.0</div>
+        <div class="acts"><span class="btn wp">More on WikiPepper ↗</span><span class="btn ghost">Spotted a mistake? Tell WikiPepper</span></div>
+        <div class="upd">Updated 12 September 2026</div>
+      </div>` : ''}
+      <div class="note">Data not yet checked by a person. Scoville values can be off.</div>
+      <span class="btn">I ate this</span>`;
+  }
+
+  document.querySelectorAll('[data-wp]').forEach((el) => { el.innerHTML = wpMark; });
+  document.querySelectorAll('[data-peppers-tab]').forEach((el) => { el.innerHTML = peppersTab(el.getAttribute('data-peppers-tab') === 'wp'); });
+  document.querySelectorAll('[data-pepper-page]').forEach((el) => { el.innerHTML = pepperPage(el.getAttribute('data-pepper-page') === 'source'); });
+  document.querySelectorAll('[data-photo]').forEach((el) => { el.outerHTML = photo(340, 240, true); });
+  document.querySelectorAll('[data-pain]').forEach((el) => { el.innerHTML = painMeter(Number(el.getAttribute('data-pain')), el.hasAttribute('data-big')); });
+  document.getElementById('head-piri').innerHTML = piri('happy', 38);
+  document.getElementById('home-piri').innerHTML = piri('squint', 64, '#F0953A');
+  document.getElementById('sad-piri').innerHTML = piri('squint', 72);
+  document.getElementById('share-piri').innerHTML = piri('cry', 80);
+
+  // The two-way flow, drawn tall for a narrow panel (12).
+  const ink = '#1E1410', wp = '#2F7A3E', acc = '#D6321F';
+  const box = (x, y, w, h, title, lines, color) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="#fff" stroke="${color}" stroke-width="3"/>
+    <text x="${x + w / 2}" y="${y + 28}" text-anchor="middle" font-family="'Baloo 2', Arial, sans-serif" font-weight="800" font-size="18" fill="${ink}">${title}</text>
+    ${lines.map((l, i) => `<text x="${x + w / 2}" y="${y + 50 + i * 17}" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="13" fill="#57443A">${l}</text>`).join('')}`;
+  const arrow = (x1, y1, x2, y2, lines, color, side) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="3" marker-end="url(#ah-${color.slice(1)})"/>
+    ${lines.map((l, i) => `<text x="${side === 'left' ? x1 - 10 : x1 + 10}" y="${(y1 + y2) / 2 - 4 + i * 15}" text-anchor="${side === 'left' ? 'end' : 'start'}" font-family="Nunito, Arial, sans-serif" font-weight="700" font-size="12" fill="${ink}">${l}</text>`).join('')}`;
+  const mk = (c) => `<marker id="ah-${c.slice(1)}" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="${c}"/></marker>`;
+  document.getElementById('diagram').innerHTML = `<svg viewBox="0 0 320 560" aria-label="Diagram: WikiPepper, the Mouth on Fire server and the app on the phone, with updates flowing down and corrections flowing up">
+    <defs>${mk(wp)}${mk(acc)}</defs>
+    ${box(40, 10, 240, 100, 'WikiPepper', ['wikipepper.org', 'database and curators', 'single source of truth'], wp)}
+    ${box(40, 230, 240, 100, 'Mouth on Fire server', ['fetches the changes nightly', 'checks corrections once', 'keeps every credit'], ink)}
+    ${box(40, 450, 240, 100, 'App on the phone', ['shows the pepper pages', '"More on WikiPepper"', '"Tell WikiPepper"'], acc)}
+    ${arrow(110, 112, 110, 226, ['updates,', 'through', 'the API'], wp, 'left')}
+    ${arrow(110, 332, 110, 446, ['a fresh', 'catalog'], wp, 'left')}
+    ${arrow(210, 448, 210, 334, ['a user reports', 'a wrong value'], acc, 'right')}
+    ${arrow(210, 228, 210, 114, ['checked once,', 'to the curators'], acc, 'right')}
+  </svg>`;
+</script>
+</body>
+</html>
