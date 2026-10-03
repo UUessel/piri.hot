@@ -252,7 +252,7 @@
     <div class="col">
       <h2><small>Frame 3</small>The Peppers tab</h2>
       <div class="tags"><span class="tag exists">In the app today</span></div>
-      <p class="lead">The catalog: a search field, filters by heat stage, and one row per pepper with its photo, name, species and heat. "Which pepper is this?" is a small look-up by colour, shape and size. Today the catalog holds 315 peppers, 107 of them switched on, built from Wikidata, Wikipedia, books and a university publication.</p>
+      <p class="lead">The catalog: a search field, filters by heat stage, and one row per pepper with its photo, name, species and heat. "Which pepper is this?" is a small look-up by colour, shape and size. The catalog holds 315 peppers today.</p>
     </div>
     <div class="col">
       <div class="phone">
@@ -296,7 +296,7 @@
     <div class="col">
       <h2><small>Frame 5</small>The pepper page</h2>
       <div class="tags"><span class="tag exists">In the app today</span></div>
-      <p class="lead">One page per pepper, top to bottom: the photo with the heat stage and the photo credit, the name in the user's language with the English and Latin name, your own burns of this pepper, the average heat with its range and "how many jalapeños", the origin, the story, a fun fact told by Piri, the facts (flavour, colour, used in, weight), the name in other languages, a note when the data is not yet checked by a person, and the "I ate this" button.</p>
+      <p class="lead">One page per pepper, top to bottom: the photo with the heat stage and the photo credit, the name in the user's language with the English and Latin name, your own burns of this pepper, the average heat with its range and "how many jalapeños", the origin, the story, a fun fact told by Piri, the facts (flavour, colour, used in, weight), the name in other languages, and the "I ate this" button.</p>
       <p class="lead">This page stays exactly like this in part 2. Only one card is added.</p>
     </div>
     <div class="col"><div class="phone" data-pepper-page="plain"></div></div>
@@ -386,7 +386,7 @@
     <div class="col">
       <h2><small>Frame 10</small>"Not here yet? Find it or add it on WikiPepper"</h2>
       <div class="tags"><span class="tag proposal">Proposal</span></div>
-      <p class="lead">When a search finds nothing, the app has no "add a pepper" form of its own. It sends the user to WikiPepper: search there, or submit the pepper there, and it shows up in the app after the next update. The same two links come at the end of "Which pepper is this?" when none of the guesses fit. Today the app only says "No pepper matches".</p>
+      <p class="lead">When a search finds nothing, the app has no "add a pepper" form of its own. It sends the user to WikiPepper: search there, or submit the pepper there, and it shows up in the app after the next update. The same two links come at the end of "Which pepper is this?" when none of the guesses fit.</p>
     </div>
     <div class="col">
       <div class="phone">
@@ -438,7 +438,7 @@
           <div class="acts"><span class="btn wp">Support WikiPepper ♥</span><span class="btn ghost">Visit wikipepper.org ↗</span></div>
         </div>
         <div class="card"><h3>Mouth on Fire</h3><div class="muted">The stories, the translations, the heat stage names and the fun facts are written by Wessel, in his own words.</div></div>
-        <div class="card"><h3>Translations</h3><div class="muted">The app texts in eight languages; drafts are marked as such until a person has read them.</div></div>
+        <div class="card"><h3>Translations</h3><div class="muted">The app speaks eight languages and shows pepper names in 27.</div></div>
       </div>
     </div>
   </div>
@@ -447,7 +447,7 @@
     <div class="col">
       <h2><small>Frame 13</small>Updates flow both ways</h2>
       <div class="tags"><span class="tag proposal">Proposal</span></div>
-      <p class="lead">WikiPepper's database stays the single source of truth. An API is a way for one computer system to ask another for data automatically, without a person copying anything. Through the API the Mouth on Fire server fetches WikiPepper's changes every night and the app shows them. Corrections go the other way: a tap on "Tell WikiPepper" reaches the server, I look at it once so WikiPepper gets no noise, and it goes to WikiPepper's curators. Today the imports are done by hand from free sources.</p>
+      <p class="lead">WikiPepper's database stays the single source of truth. An API is a way for one computer system to ask another for data automatically, without a person copying anything. Through the API the Mouth on Fire server fetches WikiPepper's changes every night and the app shows them. Corrections go the other way: a tap on "Tell WikiPepper" reaches the server, I look at it once so WikiPepper gets no noise, and it goes to WikiPepper's curators.</p>
       <div class="diagram" id="diagram"></div>
     </div>
   </div>
@@ -493,8 +493,7 @@
         <path d="M48 40 C40 62 44 96 58 118" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="5" stroke-linecap="round"/>
         <path d="M62 36 C58 60 60 90 70 116 M78 40 C86 66 88 96 80 120" fill="none" stroke="#1E1410" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/>
       </g>
-      ${label ? `<text x="42" y="18" text-anchor="start" font-family="Nunito, Arial, sans-serif" font-size="${Math.max(8, Math.round(h * 0.04))}" fill="#1E1410" fill-opacity=".4">example drawing, not a photo</text>` : ''}
-      ${stamp}
+            ${stamp}
     </svg>`;
   }
 
@@ -534,7 +533,6 @@
         <div class="acts"><span class="btn wp">More on WikiPepper ↗</span><span class="btn ghost">Spotted a mistake? Tell WikiPepper</span></div>
         <div class="upd">Updated 12 September 2026</div>
       </div>` : ''}
-      <div class="note">Data not yet checked by a person. Scoville values can be off.</div>
       <span class="btn">I ate this</span>`;
   }
 
@@ -572,7 +570,6 @@
     ${arrow(632, 110, 798, 110, ['a fresh catalog'], wp, 'up', false)}
     ${arrow(798, 170, 632, 170, ['a user reports', 'a wrong value'], acc, 'down', false)}
     ${arrow(408, 170, 242, 170, ['checked once, passed', 'to the curators'], acc, 'down', false)}
-    <text x="520" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="12" fill="#8a6e64">Today: imports by hand from free sources.</text>
   </svg>`;
 </script>
 </body>
