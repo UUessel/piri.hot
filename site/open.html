@@ -1,0 +1,94 @@
+<!doctype html>
+<!-- piri.hot/open (MOF-71). Copied from preview/open.html by scripts/build-site.ts in the MoF repository: edit it there, then rebuild. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Open Mouth on Fire</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&family=Noto+Sans+Thai:wght@400;700;800&display=swap">
+<style>
+  :root {
+    --bg: #FBF5EC; --card: #FFFFFF; --ink: #1E1410; --ink2: #57443A; --line: #E8DCCF; --accent: #D6321F; --sun: #FFF1B8;
+    --display: 'Baloo 2', 'Noto Sans Thai', 'Trebuchet MS', sans-serif; --body: 'Nunito', 'Noto Sans Thai', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.5; display: flex; flex-direction: column; }
+  main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px 16px; gap: 10px; }
+  .sun { width: 136px; height: 136px; border-radius: 50%; background: var(--sun); border: 2px solid var(--ink); position: relative; }
+  .sun svg { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  h1 { font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 1.1; margin: 8px 0 0; }
+  p { margin: 0; font-size: 16px; color: var(--ink2); max-width: 34ch; }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 19px; padding: 12px 28px; border-radius: 999px; border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); margin-top: 10px; }
+  .btn.ghost { background: var(--card); color: var(--ink); }
+  .dots { display: flex; gap: 6px; margin-top: 4px; }
+  .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: blink 1.2s infinite; }
+  .dots i:nth-child(2) { animation-delay: .2s; } .dots i:nth-child(3) { animation-delay: .4s; }
+  @keyframes blink { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+  footer { text-align: center; font-size: 12px; color: #8a6e64; padding: 14px 16px 20px; }
+  footer a { color: inherit; font-weight: 700; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <div class="sun"><span id="piri"></span></div>
+  <h1 id="title"></h1>
+  <p id="text"></p>
+  <div class="dots" id="dots"><i></i><i></i><i></i></div>
+  <a class="btn" id="open" href="#"></a>
+  <a class="btn ghost" id="what" href="https://piri.hot"></a>
+</main>
+<footer><a href="https://piri.hot">piri.hot</a> &middot; <a href="https://piri.hot/privacy" id="f_privacy"></a></footer>
+
+<script src="badges-draw.js"></script>
+<script>
+// The page a sign-in link lands on (MOF-71). Supabase checks the link, then sends the browser here with ?code=... (or,
+// for a used or old link, error fields in the query or after #). On a phone the page hands the code to the app at once
+// through mouthonfire://auth/callback; the button repeats that when the phone asked "Open in Mouth on Fire?" and the
+// person said no. On a computer the code is useless (the app on the phone holds the other half), so the page says so.
+const T = {
+  en: { opening: 'Opening Mouth on Fire…', opening_p: 'Signing you in. If the app does not open by itself, tap the button.', open: 'Open Mouth on Fire', phone: 'Back to your phone', phone_p: 'This link only works on the phone where you asked for it. Open the mail there and tap the button, or type the six-digit code from the mail in the app.', cold: 'That link has gone cold', cold_p: 'Links work once and for one hour. Ask for a new one in the app; it arrives within a minute.', what: 'What is Mouth on Fire?', privacy: 'Privacy' },
+  nl: { opening: 'Mouth on Fire gaat open…', opening_p: 'Je wordt ingelogd. Opent de app niet vanzelf, tik dan op de knop.', open: 'Open Mouth on Fire', phone: 'Terug naar je telefoon', phone_p: 'Deze link werkt alleen op de telefoon waar je hem hebt aangevraagd. Open de mail daar en tik op de knop, of typ de zescijferige code uit de mail in de app.', cold: 'Die link is koud geworden', cold_p: 'Een link werkt één keer en één uur lang. Vraag een nieuwe aan in de app; die komt binnen een minuut.', what: 'Wat is Mouth on Fire?', privacy: 'Privacy' },
+  de: { opening: 'Mouth on Fire öffnet sich…', opening_p: 'Du wirst angemeldet. Öffnet sich die App nicht von selbst, tippe auf den Knopf.', open: 'Mouth on Fire öffnen', phone: 'Zurück zu deinem Handy', phone_p: 'Dieser Link funktioniert nur auf dem Handy, auf dem du ihn angefordert hast. Öffne die Mail dort und tippe auf den Knopf, oder tippe den sechsstelligen Code aus der Mail in die App.', cold: 'Dieser Link ist kalt geworden', cold_p: 'Ein Link gilt einmal und eine Stunde lang. Fordere in der App einen neuen an; er kommt innerhalb einer Minute.', what: 'Was ist Mouth on Fire?', privacy: 'Datenschutz' },
+  fr: { opening: 'Ouverture de Mouth on Fire…', opening_p: 'Connexion en cours. Si l’appli ne s’ouvre pas toute seule, touche le bouton.', open: 'Ouvrir Mouth on Fire', phone: 'Retourne sur ton téléphone', phone_p: 'Ce lien ne marche que sur le téléphone où tu l’as demandé. Ouvre le mail là-bas et touche le bouton, ou tape le code à six chiffres du mail dans l’appli.', cold: 'Ce lien a refroidi', cold_p: 'Un lien marche une fois, pendant une heure. Demandes-en un nouveau dans l’appli ; il arrive en moins d’une minute.', what: 'C’est quoi, Mouth on Fire ?', privacy: 'Confidentialité' },
+  es: { opening: 'Abriendo Mouth on Fire…', opening_p: 'Iniciando sesión. Si la app no se abre sola, toca el botón.', open: 'Abrir Mouth on Fire', phone: 'Vuelve a tu teléfono', phone_p: 'Este enlace solo funciona en el teléfono donde lo pediste. Abre el correo allí y toca el botón, o escribe en la app el código de seis cifras del correo.', cold: 'Ese enlace se ha enfriado', cold_p: 'Un enlace funciona una vez y durante una hora. Pide uno nuevo en la app; llega en menos de un minuto.', what: '¿Qué es Mouth on Fire?', privacy: 'Privacidad' },
+  it: { opening: 'Apertura di Mouth on Fire…', opening_p: 'Accesso in corso. Se l’app non si apre da sola, tocca il pulsante.', open: 'Apri Mouth on Fire', phone: 'Torna al tuo telefono', phone_p: 'Questo link funziona solo sul telefono da cui l’hai richiesto. Apri la mail lì e tocca il pulsante, oppure digita nell’app il codice a sei cifre della mail.', cold: 'Quel link si è raffreddato', cold_p: 'Un link funziona una volta sola, per un’ora. Chiedine uno nuovo nell’app: arriva entro un minuto.', what: 'Cos’è Mouth on Fire?', privacy: 'Privacy' },
+  pt: { opening: 'A abrir o Mouth on Fire…', opening_p: 'A iniciar sessão. Se a app não abrir sozinha, toca no botão.', open: 'Abrir o Mouth on Fire', phone: 'Volta ao teu telemóvel', phone_p: 'Este link só funciona no telemóvel onde o pediste. Abre o e-mail lá e toca no botão, ou escreve na app o código de seis dígitos do e-mail.', cold: 'Esse link arrefeceu', cold_p: 'Um link funciona uma vez, durante uma hora. Pede um novo na app; chega em menos de um minuto.', what: 'O que é o Mouth on Fire?', privacy: 'Privacidade' },
+  th: { opening: 'กำลังเปิด Mouth on Fire…', opening_p: 'กำลังพาคุณเข้าสู่ระบบ ถ้าแอปไม่เปิดขึ้นเอง ให้แตะปุ่ม', open: 'เปิด Mouth on Fire', phone: 'กลับไปที่โทรศัพท์ของคุณ', phone_p: 'ลิงก์นี้ใช้ได้เฉพาะบนโทรศัพท์ที่คุณขอลิงก์ไว้ เปิดอีเมลที่นั่นแล้วแตะปุ่ม หรือพิมพ์รหัสหกหลักจากอีเมลลงในแอป', cold: 'ลิงก์นี้เย็นชืดไปแล้ว', cold_p: 'ลิงก์ใช้ได้ครั้งเดียวและภายในหนึ่งชั่วโมง ขอลิงก์ใหม่ในแอปได้เลย จะมาถึงภายในหนึ่งนาที', what: 'Mouth on Fire คืออะไร?', privacy: 'ความเป็นส่วนตัว' },
+};
+const query = new URLSearchParams(location.search);
+const hash = new URLSearchParams(location.hash.replace(/^#/, ''));
+const get = (k) => query.get(k) ?? hash.get(k);
+const langs = [query.get('lang'), ...(navigator.languages || [navigator.language])].filter(Boolean).map((l) => l.slice(0, 2).toLowerCase());
+const lang = langs.find((l) => T[l]) || 'en';
+const t = T[lang];
+document.documentElement.lang = lang;
+
+const code = get('code');
+const error = get('error_code') || get('error') || get('error_description');
+const onPhone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const state = error ? 'cold' : code && onPhone ? 'opening' : 'phone';
+const appUrl = code ? 'mouthonfire://auth/callback?code=' + encodeURIComponent(code) : null;
+
+const bare = (spec, size) => medal({ name: 'Piri', fill: 'none', bare: true, ...spec }, size, true);
+const piri = { opening: { mood: 'cool', body: '#E43D28', scale: 0.66 }, phone: { mood: 'happy', glyph: 'sweat', body: '#E43D28', scale: 0.66 }, cold: { mood: 'squint', body: '#C9BDB0', scale: 0.66 } };
+document.getElementById('piri').innerHTML = bare(piri[state], 128);
+document.getElementById('title').textContent = t[state];
+document.title = t[state];
+document.getElementById('text').textContent = t[state + '_p'];
+document.getElementById('open').textContent = t.open;
+document.getElementById('what').textContent = t.what;
+document.getElementById('f_privacy').textContent = t.privacy;
+document.getElementById('dots').classList.toggle('hidden', state !== 'opening');
+document.getElementById('open').classList.toggle('hidden', state !== 'opening');
+document.getElementById('what').classList.toggle('hidden', state === 'opening');
+if (state === 'opening') {
+  document.getElementById('open').href = appUrl;
+  // hand the code to the app straight away; the button stays for a second try
+  setTimeout(() => { location.href = appUrl; }, 150);
+}
+</script>
+</body>
+</html>
